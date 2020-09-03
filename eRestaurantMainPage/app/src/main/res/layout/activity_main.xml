@@ -109,4 +109,12 @@
         app:layout_constraintTop_toBottomOf="@id/footer_line" />
 
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press to Killself"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="511dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
