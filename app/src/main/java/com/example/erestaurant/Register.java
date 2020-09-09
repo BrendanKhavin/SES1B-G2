@@ -16,13 +16,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.lang.reflect.Member;
+
 
 public class Register extends AppCompatActivity {
-    EditText mFullName,mEmail,mPassword;
+    EditText mFullName,mEmail,mPassword, mAge,mFavFood;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
-
+    //collecting data
+    DatabaseReference reff;
+    MemberInfo member;
+    //end
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +42,15 @@ public class Register extends AppCompatActivity {
         mRegisterBtn = findViewById(R.id.registerBtn);
         mLoginBtn = findViewById(R.id.createText);
 
+        mAge = findViewById(R.id.age);
+        mFavFood = findViewById(R.id.favFood);
+
         fAuth = FirebaseAuth.getInstance();
 
+        //collecting data
+        member=new MemberInfo();
+        reff = FirebaseDatabase.getInstance().getReference().child("MemberInfo");
+        // end
         if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
@@ -44,8 +59,10 @@ public class Register extends AppCompatActivity {
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getText().toString().trim();
+                final String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                final String favfood = mFavFood.getText().toString().trim();
+                final int agea= Integer.parseInt(mAge.getText().toString().trim());
 
                 if(TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is Required.");
@@ -66,6 +83,11 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+                            member.setFullname(mFullName.getText().toString().trim());
+                            member.setAge(agea);
+                            member.setEmail(email);
+                            member.setFavFood(favfood);
+                            reff.push().setValue(member);
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         } else {
                             Toast.makeText(Register.this, "Error! " + task.getException(),Toast.LENGTH_SHORT).show();
