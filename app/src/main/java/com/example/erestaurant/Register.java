@@ -30,7 +30,9 @@ public class Register extends AppCompatActivity {
     //collecting data
     DatabaseReference reff;
     MemberInfo member;
+    String currentUserId;
     //end
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +48,14 @@ public class Register extends AppCompatActivity {
         mFavFood = findViewById(R.id.favFood);
 
         fAuth = FirebaseAuth.getInstance();
+        //currentUserId= fAuth.getCurrentUser().getUid();
+
+
 
         //collecting data
         member=new MemberInfo();
         reff = FirebaseDatabase.getInstance().getReference().child("MemberInfo");
-        // end
+      // end
         if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
@@ -83,11 +88,13 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+
                             member.setFullname(mFullName.getText().toString().trim());
                             member.setAge(agea);
                             member.setEmail(email);
                             member.setFavFood(favfood);
-                            reff.push().setValue(member);
+                            currentUserId= fAuth.getCurrentUser().getUid();
+                            reff.child(currentUserId).setValue(member);
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         } else {
                             Toast.makeText(Register.this, "Error! " + task.getException(),Toast.LENGTH_SHORT).show();
