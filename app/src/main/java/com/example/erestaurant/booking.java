@@ -1,16 +1,17 @@
 package com.example.erestaurant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 public class booking extends AppCompatActivity {
-
+    public static TextView dateTextView;
+    public static TextView timeTextView;
     Button mBackBtn;
     //FirebaseAuth fAuth;
 
@@ -20,6 +21,8 @@ public class booking extends AppCompatActivity {
         setContentView(R.layout.activity_booking);
 
         mBackBtn = findViewById(R.id.backBtn);
+        timeTextView = findViewById(R.id.timeTextView);
+        dateTextView = findViewById(R.id.dateTextView);
 
       //  fAuth = FirebaseAuth.getInstance();
 
@@ -29,5 +32,43 @@ public class booking extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+    }
+
+    //Date and Time Picker
+    @Override
+    public <T extends View> T findViewById(int id) {
+        return super.findViewById(id);
+    }
+    public static void SetDateText(int year, int month, int day) {
+        if(month < 10){
+            dateTextView.setText(day + "/0" + month + "/" + year);
+        }
+        else{
+            dateTextView.setText(day + "/" + month + "/" + year);
+        }
+    }
+    public void btn_PickerDate(View view) {
+        DialogFragment fragment = new DatePickerFragment();
+        fragment.show(getSupportFragmentManager(), "date picker");
+    }
+    /*
+    public static void SetTimeText(int hour, int minute) {
+        String amPm;
+        if (hour >= 12) {
+            amPm = " PM";
+        } else
+            amPm = " AM";
+        timeTextView.setText(String.format("%02d:%02d", hour, minute) + amPm);
+    }
+
+    public void btn_PickerTime(View view) {
+        DialogFragment fragment = new TimePickerFragment();
+        fragment.show(getSupportFragmentManager(), "time picker");
+    }
+
+     */
+    public void backBtnPressed(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
     }
 }
