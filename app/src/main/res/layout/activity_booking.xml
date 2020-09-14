@@ -67,20 +67,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
 
+
     <TextView
         android:id="@+id/text_view_selected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="137dp"
-        android:layout_marginLeft="137dp"
-        android:layout_marginTop="69dp"
-        android:text="Your selection: "
-        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Please select a time and the amount of people you wish to reserve:"
+        android:textSize="17sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:visibility="visible" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -88,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="171dp"
         android:layout_marginLeft="171dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="181dp"
         android:layout_marginRight="181dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +101,7 @@
             android:id="@+id/radio_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checked="false"
             android:onClick="checkButton"
             android:text="Lunch"
             tools:layout_editor_absoluteX="171dp"
@@ -122,24 +124,25 @@
         android:id="@+id/radioGroup2"
         android:layout_width="111dp"
         android:layout_height="141dp"
-        android:layout_marginStart="171dp"
-        android:layout_marginLeft="171dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="39dp"
         android:layout_marginEnd="181dp"
         android:layout_marginRight="181dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateButton"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_selected"
         tools:visibility="visible">
 
         <RadioButton
             android:id="@+id/time1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12pm"
             android:checked="true"
+            android:onClick="checkButton3"
+            android:text="12pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -147,6 +150,7 @@
             android:id="@+id/time2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="checkButton3"
             android:text="1pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
@@ -155,6 +159,7 @@
             android:id="@+id/time3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="checkButton3"
             android:text="2pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
@@ -163,6 +168,7 @@
             android:id="@+id/time4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="checkButton3"
             android:text="3pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
@@ -175,16 +181,16 @@
         android:id="@+id/radioGroup3"
         android:layout_width="111dp"
         android:layout_height="141dp"
-        android:layout_marginStart="171dp"
-        android:layout_marginLeft="171dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="39dp"
         android:layout_marginEnd="181dp"
         android:layout_marginRight="181dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateButton"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_selected"
         tools:visibility="visible">
 
 
@@ -193,6 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
+            android:onClick="checkButton3"
             android:text="6pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
@@ -201,6 +208,7 @@
             android:id="@+id/time6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="checkButton3"
             android:text="7pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
@@ -209,6 +217,7 @@
             android:id="@+id/time7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="checkButton3"
             android:text="8pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
@@ -217,12 +226,96 @@
             android:id="@+id/time8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="checkButton3"
             android:text="9pm"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
 
     </RadioGroup>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="171dp"
+        android:layout_marginLeft="171dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_selected"
+        tools:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/peopleTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="checkButton4"
+            android:text="2"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+        <RadioButton
+            android:id="@+id/peopleThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton4"
+            android:text="3"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="457dp" />
+
+        <RadioButton
+            android:id="@+id/peopleFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton4"
+            android:text="4"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="457dp" />
+
+        <RadioButton
+            android:id="@+id/peopleFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton4"
+            android:text="5"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="457dp" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="19dp"
+        android:text="Please select session and how many you wish to reserve:"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateButton" />
+
+    <Button
+        android:id="@+id/confirmBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="154dp"
+        android:layout_marginLeft="154dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginRight="169dp"
+        android:text="Confirm"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
