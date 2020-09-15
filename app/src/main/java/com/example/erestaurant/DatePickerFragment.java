@@ -27,9 +27,6 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         DatePickerDialog dpd = new DatePickerDialog(getActivity(),this,year,month,day);
                 //add(int field, int value)
                 //Adds the given amount to a Calendar field.
-        // Add 6 days to Calendar
-        calendar.add(Calendar.DATE, 6);
-
             /*
                 getTimeInMillis()
                     Returns the time represented by this Calendar,
@@ -47,15 +44,15 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
                     since January 1, 1970 00:00:00 in getDefault() time zone.
              */
 
-        // Set the Calendar new date as maximum date of date picker
-        dpd.getDatePicker().setMaxDate(calendar.getTimeInMillis());
-
-        // Subtract 6 days from Calendar updated date
-        calendar.add(Calendar.DATE, -6);
-
         // Set the Calendar new date as minimum date of date picker
         dpd.getDatePicker().setMinDate(calendar.getTimeInMillis());
 
+        // add 6 days from Calendar updated date
+        calendar.add(Calendar.DATE, 6);
+
+
+        // Set the Calendar new date as maximum date of date picker
+        dpd.getDatePicker().setMaxDate(calendar.getTimeInMillis());
         // So, now date picker selectable date range is 7 days only
 
         // Return the DatePickerDialog
