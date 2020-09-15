@@ -21,7 +21,6 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".Register"/>
         <activity android:name=".profile"/>
-        <activity android:name=".History"/>
 
     </application>
 
