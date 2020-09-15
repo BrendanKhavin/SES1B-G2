@@ -92,11 +92,8 @@ public class profile extends AppCompatActivity {
                     mProfileEmail.setText(myEmail);
                     mProfileFavFood.setText(myFood);
                 } else {
-
                     Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
-
-
 
             }
 

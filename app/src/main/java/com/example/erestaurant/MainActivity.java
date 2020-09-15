@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         mProfile = findViewById(R.id.profileBtn);
         mOrder = findViewById(R.id.orderBtn);
-        mHistory = findViewById(R.id.historyBtn);
+        mHistory = findViewById(R.id.recentBookBtn);
 
         //fAuth = FirebaseAuth.getInstance();
 
@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),profile.class));
+            }
+        });
+
+        mHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),History.class));
             }
         });
 
