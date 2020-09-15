@@ -20,8 +20,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.lang.reflect.Member;
-
-
 public class Register extends AppCompatActivity {
     EditText mFullName,mEmail,mPassword, mAge,mFavFood;
     Button mRegisterBtn;
