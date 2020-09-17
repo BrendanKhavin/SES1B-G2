@@ -94,7 +94,7 @@ public class LunchMenuUpdater extends AppCompatActivity {
                 if(TextUtils.isEmpty(Foodname1) || myIsDigitsOnly(Foodname1)) {
                     fMeal1Name.setError("Please enter a name for the Dish.");
                     return;
-                } else if(!myIsDigitsOnly(price1)) {
+                } else if(price1.isEmpty()) {
                     fMeal1Price.setError("Please enter a valid price for the Dish.");
                     return;
                 } else {
@@ -119,7 +119,7 @@ public class LunchMenuUpdater extends AppCompatActivity {
                 if(TextUtils.isEmpty(Foodname2) || myIsDigitsOnly(Foodname2)) {
                     fMeal2Name.setError("Please enter a name for the Dish.");
                     return;
-                } else if(!myIsDigitsOnly(price2)) {
+                } else if(price2.isEmpty()) {
                     fMeal2Price.setError("Please enter a valid price for the Dish.");
                     return;
                 } else {
@@ -144,7 +144,7 @@ public class LunchMenuUpdater extends AppCompatActivity {
                 if(TextUtils.isEmpty(Foodname3) || myIsDigitsOnly(Foodname3)) {
                     fMeal3Name.setError("Please enter a name for the Dish.");
                     return;
-                } else if(!myIsDigitsOnly(price3)) {
+                } else if(price3.isEmpty()) {
                     fMeal3Price.setError("Please enter a valid price for the Dish.");
                     return;
                 } else {
@@ -169,7 +169,7 @@ public class LunchMenuUpdater extends AppCompatActivity {
                 if(TextUtils.isEmpty(Foodname4) || myIsDigitsOnly(Foodname4)) {
                     fMeal4Name.setError("Please enter a name for the Dish.");
                     return;
-                } else if(!myIsDigitsOnly(price4)) {
+                } else if(price4.isEmpty()) {
                     fMeal4Price.setError("Please enter a valid price for the Dish.");
                     return;
                 } else {
@@ -194,7 +194,7 @@ public class LunchMenuUpdater extends AppCompatActivity {
                 if(TextUtils.isEmpty(Foodname5) || myIsDigitsOnly(Foodname5)) {
                     fMeal5Name.setError("Please enter a name for the Dish.");
                     return;
-                } else if(!myIsDigitsOnly(price5)) {
+                } else if(price5.isEmpty()) {
                     fMeal5Price.setError("Please enter a valid price for the Dish.");
                     return;
                 } else {
@@ -219,7 +219,7 @@ public class LunchMenuUpdater extends AppCompatActivity {
                 if(TextUtils.isEmpty(Foodname6) || myIsDigitsOnly(Foodname6)) {
                     fMeal6Name.setError("Please enter a name for the Dish.");
                     return;
-                } else if(!myIsDigitsOnly(price6)) {
+                } else if(price6.isEmpty()) {
                     fMeal6Price.setError("Please enter a valid price for the Dish.");
                     return;
                 } else {
