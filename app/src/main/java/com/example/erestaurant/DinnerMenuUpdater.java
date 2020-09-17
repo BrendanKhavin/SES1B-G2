@@ -18,11 +18,11 @@ public class DinnerMenuUpdater extends AppCompatActivity {
         mbackBtn = findViewById(R.id.backBtn);
 
         mbackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),menuUpdateMain.class));
-            }
+@Override
+public void onClick(View view) {
+        startActivity(new Intent(getApplicationContext(),menuUpdateMain.class));
+        }
         });
 
-    }
-}
+        }
+        }
