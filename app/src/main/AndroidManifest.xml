@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DinnerMenuUpdater"></activity>
+        <activity android:name=".DinnerMenuUpdater" />
         <activity android:name=".LunchMenuUpdater" />
         <activity android:name=".menuUpdateMain" />
         <activity android:name=".staffmain" />
@@ -26,6 +26,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Register" />
         <activity android:name=".profile" />
+        <activity android:name=".History" />
     </application>
 
 </manifest>
