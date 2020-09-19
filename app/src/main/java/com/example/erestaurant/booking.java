@@ -109,7 +109,7 @@ public class booking extends AppCompatActivity {
 
                     reff4.child(currentUserId).setValue(booking);
                     Toast.makeText(booking.this, "Booking Placed!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),LunchMenu.class));
+                    startActivity(new Intent(getApplicationContext(),NeedFood.class));
 
                 }
 
