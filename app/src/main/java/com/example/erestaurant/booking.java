@@ -136,8 +136,6 @@ public class booking extends AppCompatActivity {
         radioButton3 = findViewById(radioId3);
 
 
-
-
         //int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
         ButtonP = radioButton.getText().toString();

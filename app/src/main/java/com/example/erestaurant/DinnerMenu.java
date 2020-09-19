@@ -1,13 +1,13 @@
 package com.example.erestaurant;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class LunchMenu extends AppCompatActivity {
+public class DinnerMenu extends AppCompatActivity {
 
     private String currentUserId;
     private FirebaseAuth bAuth;
@@ -40,7 +40,7 @@ public class LunchMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lunch_menu);
+        setContentView(R.layout.activity_dinner_menu);
 
         //current use null check
         bAuth = FirebaseAuth.getInstance();
@@ -92,7 +92,7 @@ public class LunchMenu extends AppCompatActivity {
                                 mRecyclerView.setAdapter(mAdapter);
          */
         final ArrayList<meals> meallist = new ArrayList<>();
-        reffy = FirebaseDatabase.getInstance().getReference().child("meals").child("Lunch");
+        reffy = FirebaseDatabase.getInstance().getReference().child("meals").child("Dinner");
         reffy.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -102,7 +102,7 @@ public class LunchMenu extends AppCompatActivity {
                     count = dataSnapshot.getChildrenCount();
                     for(int i = 1; i <= count; i++) {
                         String mealinfo = "fMeal" + i;
-                        reffy1 = FirebaseDatabase.getInstance().getReference().child("meals").child("Lunch").child(mealinfo);
+                        reffy1 = FirebaseDatabase.getInstance().getReference().child("meals").child("Dinner").child(mealinfo);
                         reffy1.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -115,7 +115,7 @@ public class LunchMenu extends AppCompatActivity {
 
                                     mRecyclerView = findViewById(R.id.recyclerView);
                                     mRecyclerView.setHasFixedSize(true);
-                                    mLayoutManager = new LinearLayoutManager(LunchMenu.this);
+                                    mLayoutManager = new LinearLayoutManager(DinnerMenu.this);
                                     mAdapter = new CardAdapter(meallist);
                                     mRecyclerView.setLayoutManager(mLayoutManager);
                                     mRecyclerView.setAdapter(mAdapter);
@@ -128,7 +128,7 @@ public class LunchMenu extends AppCompatActivity {
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                                Toast.makeText(LunchMenu.this, "unable", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DinnerMenu.this, "unable", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -140,7 +140,7 @@ public class LunchMenu extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(LunchMenu.this, "unable", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DinnerMenu.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 
