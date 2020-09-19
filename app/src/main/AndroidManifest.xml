@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.erestaurant">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LunchMenu"></activity>
+        <activity android:name=".LunchMenu"/>
         <activity android:name=".DinnerMenuUpdater" />
         <activity android:name=".LunchMenuUpdater" />
         <activity android:name=".menuUpdateMain" />
@@ -27,6 +28,12 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Register" />
         <activity android:name=".profile" />
+        <activity android:name=".NeedFood" />
+        <activity android:name=".DinnerMenu" />
+        <activity android:name=".WhatMenu" />
+        <activity android:name=".LunchMenuMAIN" />
+        <activity android:name=".DinnerMenuMAIN" />
+
     </application>
 
 </manifest>

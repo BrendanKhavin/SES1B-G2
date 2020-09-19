@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     //new
     //TextView mFullName, mAge, mFavFood, mEmail;
     //end
-    Button mProfile, mOrder, mHistory;
+    Button mProfile, mOrder, mHistory,mMenu;
     //DatabaseReference reff2;
     //FirebaseAuth fAuth;
 
@@ -48,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),booking.class));
             }
         });
+
+
+        //ViewMenu
+        mMenu = findViewById(R.id.ViewMenu);
+        mMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),WhatMenu.class));
+            }
+        });
+        //just to test
 
         mProfile.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.391" />
 
     <Button
-        android:id="@+id/LunchBtn"
+        android:id="@+id/YesBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -33,26 +33,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
-        android:id="@+id/DinnerBtn"
+        android:id="@+id/NoBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
         android:text="No"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toEndOf="@+id/LunchBtn"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <Button
-        android:id="@+id/GoBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.785" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
