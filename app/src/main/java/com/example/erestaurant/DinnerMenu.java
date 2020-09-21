@@ -2,6 +2,8 @@ package com.example.erestaurant;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,10 @@ public class DinnerMenu extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    Button mContinueBtn;
+
+
+
 
 
     // private FirebaseDatabase fBase;
@@ -42,6 +48,8 @@ public class DinnerMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dinner_menu);
 
+        //
+
         //current use null check
         bAuth = FirebaseAuth.getInstance();
         currentUserId = bAuth.getCurrentUser().getUid();
@@ -49,6 +57,16 @@ public class DinnerMenu extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),Login.class));
             finish();
         }
+
+        mContinueBtn = findViewById(R.id.continueBtn);
+
+        mContinueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Checkout.class));
+                // reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child();
+            }
+        });
 
 
         /*

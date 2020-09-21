@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Lunch menu"
+        android:gravity="center_horizontal"
+        android:text="Checkout"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -27,11 +27,27 @@
         android:background="@android:color/darker_gray"
         android:padding="4dp"
         android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/PriceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerView"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:text="Total amount:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
     <Button
         android:id="@+id/continueBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recyclerView"
-        android:text="Continue"
+        android:layout_below="@+id/PriceView"
+        android:layout_marginTop="20dp"
+        android:text="Confirm Booking"
         android:textSize="14sp" />
+
 </RelativeLayout>
