@@ -16,19 +16,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Member;
 public class Register extends AppCompatActivity {
-    EditText mFullName,mEmail,mPassword, mAge,mFavFood;
+    EditText mFullName,mEmail,mPassword, mAge, mFavFood, mUserKey;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     //collecting data
-    DatabaseReference reff;
+    DatabaseReference reff, reff2;
     MemberInfo member;
-    String currentUserId;
+    String currentUserId, User;
     //end
 
     @Override
@@ -41,23 +44,22 @@ public class Register extends AppCompatActivity {
         mPassword = findViewById(R.id.Password);
         mRegisterBtn = findViewById(R.id.registerBtn);
         mLoginBtn = findViewById(R.id.createText);
+        mUserKey = findViewById(R.id.staffID);
 
         mAge = findViewById(R.id.age);
         mFavFood = findViewById(R.id.favFood);
-
         fAuth = FirebaseAuth.getInstance();
         //currentUserId= fAuth.getCurrentUser().getUid();
-
+      //  final boolean[] myUser = {false};
 
 
         //collecting data
         member=new MemberInfo();
         reff = FirebaseDatabase.getInstance().getReference().child("MemberInfo");
+        reff2 = FirebaseDatabase.getInstance().getReference().child("StaffKeys");
+
       // end
-        if(fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
+
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +68,39 @@ public class Register extends AppCompatActivity {
                 String password = mPassword.getText().toString().trim();
                 final String favfood = mFavFood.getText().toString().trim();
                 final int agea= Integer.parseInt(mAge.getText().toString().trim());
+                final String key = mUserKey.getText().toString().trim();
+
+                reff2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String mykey = null;
+                        if(dataSnapshot.exists()) {
+                            mykey = dataSnapshot.child("staffKey").getValue().toString();
+                            if(!key.equals(mykey)) {
+                             //   myUser[0] = true;
+                                member.setUserKey("User");
+                               // finish();
+                            } else {
+                                member.setUserKey(mykey);
+                                reff2.child("staffKey").removeValue();
+                               // finish();
+                            }
+                        } else if(member.getUserKey() == null) {
+                            member.setUserKey("User");
+                           // finish();
+                        }
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
+                        Toast.makeText(Register.this, "unable", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
 
                 if(TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is Required.");
@@ -93,7 +128,9 @@ public class Register extends AppCompatActivity {
                             member.setFavFood(favfood);
                             currentUserId= fAuth.getCurrentUser().getUid();
                             reff.child(currentUserId).setValue(member);
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+
+                            startActivity(new Intent(getApplicationContext(),Login.class));
                         } else {
                             Toast.makeText(Register.this, "Error! " + task.getException(),Toast.LENGTH_SHORT).show();
                         }
@@ -109,7 +146,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
- 
+
 
     }
 }

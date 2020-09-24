@@ -5,6 +5,7 @@ public class MemberInfo {
     private String Email;
     private Integer Age;
     private String FavFood;
+    private String userKey;
 
 
     public String getFullname() {
@@ -37,5 +38,13 @@ public class MemberInfo {
 
     public void setFavFood(String favFood) {
         FavFood = favFood;
+    }
+
+    public String getUserKey() {
+        return userKey;
+    }
+
+    public void setUserKey(String userKey) {
+        this.userKey = userKey;
     }
 }
