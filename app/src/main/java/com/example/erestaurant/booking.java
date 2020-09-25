@@ -30,6 +30,7 @@ public class booking extends AppCompatActivity {
     TextView textView;
     String ButtonP, currentUserId, name, test, testid;
 
+
     //database stuff
     BookingDetails booking;
     //FirebaseAuth fAuth;
@@ -109,7 +110,7 @@ public class booking extends AppCompatActivity {
 
                     reff4.child(currentUserId).setValue(booking);
                     Toast.makeText(booking.this, "Booking Placed!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),NeedFood.class));
 
                 }
 

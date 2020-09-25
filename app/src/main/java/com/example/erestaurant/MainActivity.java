@@ -26,10 +26,14 @@ public class MainActivity extends AppCompatActivity {
     //new
     //TextView mFullName, mAge, mFavFood, mEmail;
     //end
+<<<<<<< HEAD
     Button mProfile, mOrder, mHistory;
     private DatabaseReference reff;
     private FirebaseAuth bAuth;
     String currentUserID;
+=======
+    Button mProfile, mOrder, mHistory,mMenu;
+>>>>>>> master
     //DatabaseReference reff2;
     //FirebaseAuth fAuth;
 
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mProfile = findViewById(R.id.profileBtn);
         mOrder = findViewById(R.id.orderBtn);
         mHistory = findViewById(R.id.historyBtn);
+        mMenu = findViewById(R.id.ViewMenu);
 
         bAuth = FirebaseAuth.getInstance();
 
@@ -80,6 +85,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+<<<<<<< HEAD
+=======
+        //ViewMenu
+
+        mMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),WhatMenu.class));
+            }
+        });
+
+>>>>>>> master
         mProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
