@@ -11,12 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".LunchMenu"></activity>
-=======
-        <activity android:name=".keyGen"></activity>
+        <activity android:name=".keyGen"/>
         <activity android:name=".LunchMenu" />
->>>>>>> master
         <activity android:name=".DinnerMenuUpdater" />
         <activity android:name=".LunchMenuUpdater" />
         <activity android:name=".menuUpdateMain" />
@@ -32,16 +28,13 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Register" />
         <activity android:name=".profile" />
-<<<<<<< HEAD
         <activity android:name=".History" />
-=======
         <activity android:name=".NeedFood" />
         <activity android:name=".DinnerMenu" />
         <activity android:name=".WhatMenu" />
         <activity android:name=".LunchMenuMAIN" />
         <activity android:name=".DinnerMenuMAIN" />
         <activity android:name=".Checkout" />
->>>>>>> master
     </application>
 
 </manifest>
