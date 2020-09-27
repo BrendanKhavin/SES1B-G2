@@ -28,7 +28,7 @@
         android:padding="4dp"
         android:scrollbars="vertical" />
     <Button
-        android:id="@+id/continueBtn"
+        android:id="@+id/goBackBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recyclerView"

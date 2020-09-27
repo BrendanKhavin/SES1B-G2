@@ -25,7 +25,7 @@ public class CardAdapterMAIN extends RecyclerView.Adapter<CardAdapterMAIN.CardVi
     }
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.mealcard, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.mealcard_formainscreen, parent, false);
         CardViewHolder CVH = new CardViewHolder(v);
         return CVH;
     }

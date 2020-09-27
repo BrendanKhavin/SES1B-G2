@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class History extends AppCompatActivity {
     Button modifyBtn, deleteBtn, backBtn;
-    TextView bookingDate, bookingTime, bookingSeating, bookingSession;
+    TextView bookingDate, bookingTime, bookingSeating, bookingSession,bookingFoodSituation;
     String currentUserID;
     private DatabaseReference reff;
     private FirebaseAuth bAuth;
@@ -38,6 +38,7 @@ public class History extends AppCompatActivity {
         bookingTime = (TextView) findViewById(R.id.timeTxt);
         bookingSeating = (TextView) findViewById(R.id.seatingTxt);
         bookingSession = (TextView) findViewById(R.id.sessionTxt);
+        bookingFoodSituation = (TextView) findViewById(R.id.foodReqTxt2);
 
         bAuth = FirebaseAuth.getInstance();
 
@@ -58,7 +59,8 @@ public class History extends AppCompatActivity {
                     String bTime = dataSnapshot.child("session").getValue().toString();
                     String bNumPeople = dataSnapshot.child("numPeople").getValue().toString();
                     String bStatus = dataSnapshot.child("status").getValue().toString();
-
+                    String bFoodStat = dataSnapshot.child("foodSTat").getValue().toString();
+                    bookingFoodSituation.setText(bFoodStat);
                     bookingDate.setText(bDate);
                     bookingTime.setText(bTime);
                     bookingSeating.setText(bNumPeople);
@@ -91,6 +93,7 @@ public class History extends AppCompatActivity {
                 bookingTime.setText("");
                 bookingSeating.setText("");
                 bookingSession.setText("");
+                bookingFoodSituation.setText("");
             }
         });
 

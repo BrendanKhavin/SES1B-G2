@@ -58,7 +58,7 @@ public class DinnerMenu extends AppCompatActivity {
             finish();
         }
 
-        mContinueBtn = findViewById(R.id.continueBtn);
+        mContinueBtn = findViewById(R.id.goBackBtn);
 
         mContinueBtn.setOnClickListener(new View.OnClickListener() {
             @Override

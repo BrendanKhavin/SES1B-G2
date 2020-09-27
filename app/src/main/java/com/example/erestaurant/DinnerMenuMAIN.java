@@ -40,7 +40,7 @@ public class DinnerMenuMAIN extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dinner_menu);
+        setContentView(R.layout.activity_dinner_menu_formain);
 
         //current use null check
         bAuth = FirebaseAuth.getInstance();
