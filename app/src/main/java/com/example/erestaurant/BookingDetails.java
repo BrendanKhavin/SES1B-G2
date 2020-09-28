@@ -9,7 +9,6 @@ public class BookingDetails {
     private String FoodSTat;
 
 
-
     public String getBookingID() {
         return bookingID;
     }

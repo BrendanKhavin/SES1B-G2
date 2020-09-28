@@ -26,11 +26,12 @@ public class Checkout extends AppCompatActivity {
      private RecyclerView.LayoutManager mLayoutManager;
      Button mContinueBtn;
      TextView bDate, bTime, bSeating, bFoodStat,bTotalAmount;
+     float jeff = 69;
 
 
      BookingDetails booking;
      long count;
-     DatabaseReference reff2,reff4;
+     DatabaseReference reff2,reff4, reff69;
 
 
 
@@ -53,6 +54,8 @@ public class Checkout extends AppCompatActivity {
        bTotalAmount = (TextView) findViewById(R.id.PriceView);
 
         reff2 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
+        reff69 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem");
+
         booking = new BookingDetails();
         reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails");
         reff2.addValueEventListener(new ValueEventListener() {
@@ -84,8 +87,11 @@ public class Checkout extends AppCompatActivity {
                     booking.setFoodSTat(food);
 
                     if(food.equals("Yes")) {
-                        //uuuu +_+ calculator
-                        float jeff = 69;
+                        //for (int x = 0; x<=100; x++){
+                        //    String y = dataSnapshot.child("FoodItem").child("Item"+String.valueOf(x)).getValue().toString();
+                        //    int i = Integer.parseInt(y);
+                        //    jeff = jeff + i;
+                        //}
                         String s5 = "Total amount:  $" + String.valueOf(jeff);
                         bTotalAmount.setText(s5);
 

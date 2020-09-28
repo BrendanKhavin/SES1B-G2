@@ -27,14 +27,15 @@ public class LunchMenu extends AppCompatActivity {
     private String currentUserId;
     private FirebaseAuth bAuth;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CardAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    int x = 0;
 
     Button mContinueBtn;
     Button mAddToCart;
 
     // private FirebaseDatabase fBase;
-    private DatabaseReference reffy,reffy1;
+    private DatabaseReference reffy,reffy1,reffy2;
     long count;
     //DatabaseReference reff2;
     FirebaseDatabase db;
@@ -69,11 +70,9 @@ public class LunchMenu extends AppCompatActivity {
 
 
 
-
-
-
         final ArrayList<meals> meallist = new ArrayList<>();
         reffy = FirebaseDatabase.getInstance().getReference().child("meals").child("Lunch");
+        reffy2 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
         reffy.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,6 +99,15 @@ public class LunchMenu extends AppCompatActivity {
                                     mAdapter = new CardAdapter(meallist);
                                     mRecyclerView.setLayoutManager(mLayoutManager);
                                     mRecyclerView.setAdapter(mAdapter);
+
+                                    mAdapter.setOnItemClickListener(new CardAdapter.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(int position) {
+                                            reffy2.child("FoodItem").child("Item"+String.valueOf(x)).setValue(meallist.get(position));
+                                            x++;
+                                        }
+                                    });
+
                                 } else {
 
                                     Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
