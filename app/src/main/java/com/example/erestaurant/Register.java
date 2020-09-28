@@ -51,7 +51,7 @@ public class Register extends AppCompatActivity {
 
 
         //collecting data
-        member=new MemberInfo();
+        member = new MemberInfo();
         reff = FirebaseDatabase.getInstance().getReference().child("MemberInfo");
       // end
         if(fAuth.getCurrentUser() != null) {
