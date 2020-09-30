@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="4dp">
+
     <RelativeLayout
+        android:id="@+id/CardViewww"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="4dp">
@@ -31,15 +35,13 @@
             android:text="Line 2"
             android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/AddItemBtn"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:id="@+id/AddItem"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="330dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="270dp"
             android:padding="2dp"
-            android:text="Add"
-            android:textSize="12sp"
-            android:layout_marginLeft="270dp" />
+            android:src="@android:drawable/ic_input_add"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

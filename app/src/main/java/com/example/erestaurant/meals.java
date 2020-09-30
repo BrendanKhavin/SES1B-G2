@@ -28,4 +28,5 @@ public class meals {
     public void setFoodPrice(String foodPrice) {
         this.foodPrice = foodPrice;
     }
+
 }

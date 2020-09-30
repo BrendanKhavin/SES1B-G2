@@ -1,8 +1,5 @@
 package com.example.erestaurant;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -80,10 +80,10 @@ public class Login extends AppCompatActivity {
                                         String mykey = dataSnapshot.child("userKey").getValue().toString();
                                         if(mykey.equals("User")) {
                                             Toast.makeText(Login.this, "Logged in successful", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                         } else {
                                             Toast.makeText(Login.this, "Welcome Staff Member", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(),staffmain.class));
+                                            startActivity(new Intent(getApplicationContext(), staffmain.class));
                                         }
                                     } else {
 
@@ -111,7 +111,7 @@ public class Login extends AppCompatActivity {
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Register.class));
+                startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
 

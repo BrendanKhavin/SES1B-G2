@@ -1,7 +1,6 @@
 package com.example.erestaurant;
 
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -25,8 +24,8 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
         //setting 7days date picker range for the booking
         DatePickerDialog dpd = new DatePickerDialog(getActivity(),this,year,month,day);
-        //add(int field, int value)
-        //Adds the given amount to a Calendar field.
+                //add(int field, int value)
+                //Adds the given amount to a Calendar field.
             /*
                 getTimeInMillis()
                     Returns the time represented by this Calendar,

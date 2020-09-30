@@ -1,9 +1,5 @@
 package com.example.erestaurant;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,13 +9,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import android.widget.DatePicker;
 
 public class booking extends AppCompatActivity {
     public static TextView dateTextView;
@@ -65,17 +60,17 @@ public class booking extends AppCompatActivity {
         mBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
 
         mconfirmBtn = findViewById(R.id.confirmBtn);
         //collecting data
         booking = new BookingDetails();
-        reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails");
+        reff4 = FirebaseDatabase.getInstance().getReference().child("ShopTemp");
 
         if(fAuth1.getCurrentUser() == null) {
-            startActivity(new Intent(getApplicationContext(),Login.class));
+            startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
 
@@ -94,6 +89,7 @@ public class booking extends AppCompatActivity {
                 }
                 String date = dateTextView.getText().toString();
                 String status = radioButton.getText().toString();
+                String food = "No";
                 booking.setBookingID(bookingID);
                 booking.setStatus(status);
                 booking.setDate(date);
@@ -104,12 +100,11 @@ public class booking extends AppCompatActivity {
 
 
                 if(date.equals("")) {
-                    Toast.makeText(booking.this, "Please select a date", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.example.erestaurant.booking.this, "Please select a date", Toast.LENGTH_SHORT).show();
                 } else {
 
                     reff4.child(currentUserId).setValue(booking);
-                    Toast.makeText(booking.this, "Booking Placed!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),NeedFood.class));
+                    startActivity(new Intent(getApplicationContext(), NeedFood.class));
 
                 }
 
