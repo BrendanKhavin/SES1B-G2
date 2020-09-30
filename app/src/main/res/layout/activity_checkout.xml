@@ -11,12 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:gravity="center_horizontal"
-        android:text="Checkout"
-        android:textAlignment="center"
+        android:text="Check Out"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        class="androidx.appcompat.app.AlertController$RecycleListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView"
+        android:layout_marginTop="124dp"
+        android:background="@android:color/background_light"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
 
     <TextView
         android:id="@+id/TextView1"
@@ -51,6 +62,33 @@
         android:textColor="@android:color/black"
         android:textSize="14sp"
         android:textStyle="bold" />
+
+    <!--
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:text="Checkout"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        class="androidx.appcompat.app.AlertController$RecycleListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView4"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/darker_gray"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        android:visibility="gone" />
+        -->
+
     <TextView
         android:id="@+id/TextView4"
         android:layout_width="match_parent"
@@ -63,24 +101,12 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        class="androidx.appcompat.app.AlertController$RecycleListView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView4"
-        android:layout_marginTop="4dp"
-        android:background="@android:color/darker_gray"
-        android:padding="4dp"
-        android:scrollbars="vertical"
-        android:visibility="gone" />
-
     <TextView
         android:id="@+id/PriceView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recyclerView"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:text="Total amount:"
         android:textAlignment="center"
@@ -90,10 +116,12 @@
 
     <Button
         android:id="@+id/goBackBtn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
         android:layout_below="@+id/PriceView"
-        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="80dp"
         android:text="Confirm Booking"
         android:textSize="14sp" />
 

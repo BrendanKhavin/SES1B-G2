@@ -96,8 +96,6 @@ public class profile extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
 
-
-
             }
 
             @Override

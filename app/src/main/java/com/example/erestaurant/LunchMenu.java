@@ -89,7 +89,7 @@ public class LunchMenu extends AppCompatActivity {
 
                                 if(dataSnapshot.exists()) {
 
-                                    String foodname = dataSnapshot.child("foodName").getValue().toString();
+                                    final String foodname = dataSnapshot.child("foodName").getValue().toString();
                                     String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
                                     meallist.add(new meals(foodname,"Price: $" + foodprice));
 

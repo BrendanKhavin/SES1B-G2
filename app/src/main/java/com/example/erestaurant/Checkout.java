@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Checkout extends AppCompatActivity {
      private String currentUserId;
@@ -27,20 +30,23 @@ public class Checkout extends AppCompatActivity {
      Button mContinueBtn;
      TextView bDate, bTime, bSeating, bFoodStat,bTotalAmount;
      float jeff = 69;
-
-
+     double totalamt = 0.0;
+     String s5;
      BookingDetails booking;
      long count;
-     DatabaseReference reff2,reff4, reff69;
-
+     int x = 0;
+     ArrayList<meals> mealList = new ArrayList<>();
+     DatabaseReference reff2,reff4, reff69, reffy1,reff3;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
        bAuth = FirebaseAuth.getInstance();
        currentUserId = bAuth.getCurrentUser().getUid();
+
        if(bAuth.getCurrentUser() == null) {
           startActivity(new Intent(getApplicationContext(),Login.class));
              finish();
@@ -55,9 +61,10 @@ public class Checkout extends AppCompatActivity {
 
         reff2 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
         reff69 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem");
-
         booking = new BookingDetails();
+
         reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails");
+
         reff2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -67,6 +74,7 @@ public class Checkout extends AppCompatActivity {
                     String s2 = "Time : " + dataSnapshot.child("session").getValue().toString();
                     String s3 = "Table For : " + dataSnapshot.child("numPeople").getValue().toString();
                     String s4 = "Food required? " + dataSnapshot.child("Food").getValue().toString();
+
 
                     bDate.setText(s1);
                     bTime.setText(s2);
@@ -86,14 +94,54 @@ public class Checkout extends AppCompatActivity {
                     booking.setNumPeople(numPpl);
                     booking.setFoodSTat(food);
 
+
                     if(food.equals("Yes")) {
-                        //for (int x = 0; x<=100; x++){
-                        //    String y = dataSnapshot.child("FoodItem").child("Item"+String.valueOf(x)).getValue().toString();
-                        //    int i = Integer.parseInt(y);
-                        //    jeff = jeff + i;
-                        //}
-                        String s5 = "Total amount:  $" + String.valueOf(jeff);
-                        bTotalAmount.setText(s5);
+                        reff69.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists()){
+                                    count = dataSnapshot.getChildrenCount();
+                                    double totalList = 0.0;
+
+                                    for(int i = 0; i < count ; i++){
+                                        final String item = "Item" + i;
+                                        reffy1 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem").child(item);
+                                        reffy1.addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String foodname = dataSnapshot.child("foodName").getValue().toString();
+                                                String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
+                                                mealList.add(new meals(foodname,foodprice));
+
+                                                mRecyclerView = findViewById(R.id.recyclerView);
+                                                mRecyclerView.setHasFixedSize(true);
+                                                mLayoutManager = new LinearLayoutManager(Checkout.this);
+                                                mAdapter = new CheckoutAdapter(mealList);
+                                                mRecyclerView.setLayoutManager(mLayoutManager);
+                                                mRecyclerView.setAdapter(mAdapter);
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        totalamt = mealList.size();
+                                    }
+                                    //for(int j)
+                                    //
+                                    String s5 = "Total amount: $" + totalamt;
+                                    bTotalAmount.setText(s5);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
 
                     } else {
                         String s5 = " Total amount: No charge " ;
@@ -102,6 +150,7 @@ public class Checkout extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Not Found", Toast.LENGTH_LONG).show();
                 }
+
             }
 
             @Override
@@ -114,6 +163,7 @@ public class Checkout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 reff4.child(currentUserId).setValue(booking);
+                reff4.child(currentUserId).child("OrderList").setValue(mealList);
                 DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
                 deleteRef.removeValue();
                 Toast.makeText(Checkout.this, "Booking Placed!", Toast.LENGTH_SHORT).show();
