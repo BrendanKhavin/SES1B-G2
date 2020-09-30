@@ -14,8 +14,8 @@
         android:gravity="center_horizontal"
         android:text="Checkout"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textColor="@color/titleColour"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:gravity="center_horizontal"
         android:text="Date:"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/HeadingColour"
         android:textSize="14sp"
         android:textStyle="bold" />
     <TextView
@@ -37,7 +37,7 @@
         android:gravity="center_horizontal"
         android:text="Time:"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/HeadingColour"
         android:textSize="14sp"
         android:textStyle="bold" />
     <TextView
@@ -48,7 +48,7 @@
         android:gravity="center_horizontal"
         android:text="Table for:"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/HeadingColour"
         android:textSize="14sp"
         android:textStyle="bold" />
     <TextView
@@ -59,7 +59,7 @@
         android:gravity="center_horizontal"
         android:text="Need Food?:"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/HeadingColour"
         android:textSize="14sp"
         android:textStyle="bold" />
 
@@ -84,7 +84,7 @@
         android:gravity="center_horizontal"
         android:text="Total amount:"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@color/HeadingColour"
         android:textSize="14sp"
         android:textStyle="bold|italic" />
 
@@ -94,6 +94,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/PriceView"
         android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bg"
+        android:textColor="@color/HeadingColour"
         android:text="Confirm Booking"
         android:textSize="14sp" />
 

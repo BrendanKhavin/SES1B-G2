@@ -4,10 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/cardview_shadow_start_color"
     app:cardCornerRadius="4dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/et_bg"
         android:layout_margin="4dp">
 
         <TextView
@@ -18,7 +21,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
             android:text="Line 1"
-            android:textColor="@android:color/black"
+            android:textColor="@color/titleColour"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -30,6 +33,7 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="2dp"
             android:text="Line 2"
+            android:textColor="@color/HeadingColour"
             android:textSize="15sp" />
 
     </RelativeLayout>

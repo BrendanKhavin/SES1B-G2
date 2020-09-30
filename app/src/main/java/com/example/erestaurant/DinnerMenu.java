@@ -104,29 +104,26 @@ public class DinnerMenu extends AppCompatActivity {
                                         }
                                     });
 
-                                } else {
+                                }  // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-                                }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                                Toast.makeText(DinnerMenu.this, "unable", Toast.LENGTH_SHORT).show();
+                               //Toast.makeText(DinnerMenu.this, "unable", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-                }
+                }  // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+
             }
 
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(DinnerMenu.this, "unable", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DinnerMenu.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

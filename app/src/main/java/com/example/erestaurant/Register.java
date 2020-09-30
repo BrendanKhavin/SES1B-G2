@@ -97,7 +97,7 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                        Toast.makeText(Register.this, "unable", Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(Register.this, "unable", Toast.LENGTH_SHORT).show();
                     }
                 });
 

@@ -100,13 +100,13 @@ public class Checkout extends AppCompatActivity {
                         bTotalAmount.setText(s5);
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Not Found", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "Not Found", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(Checkout.this, "unable", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(Checkout.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -66,14 +66,13 @@ public class History extends AppCompatActivity {
                     bookingSeating.setText(bNumPeople);
                     bookingSession.setText(bStatus);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Booking Not Found", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "No Booking Exists", Toast.LENGTH_SHORT).show();
                     modifyBtn.setText("Create Booking");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(History.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

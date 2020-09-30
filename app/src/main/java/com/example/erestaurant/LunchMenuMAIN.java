@@ -80,26 +80,26 @@ public class LunchMenuMAIN extends AppCompatActivity {
                                     mRecyclerView.setAdapter(mAdapter);
                                 } else {
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                 }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                                Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 
