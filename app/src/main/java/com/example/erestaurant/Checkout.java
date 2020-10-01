@@ -29,9 +29,7 @@ public class Checkout extends AppCompatActivity {
      private RecyclerView.LayoutManager mLayoutManager;
      Button mContinueBtn;
      TextView bDate, bTime, bSeating, bFoodStat,bTotalAmount;
-     float jeff = 69;
      double totalamt = 0.0;
-     String s5;
      BookingDetails booking;
      long count;
      int x = 0;
@@ -75,11 +73,18 @@ public class Checkout extends AppCompatActivity {
                     String s3 = "Table For : " + dataSnapshot.child("numPeople").getValue().toString();
                     String s4 = "Food required? " + dataSnapshot.child("Food").getValue().toString();
 
-
                     bDate.setText(s1);
                     bTime.setText(s2);
                     bSeating.setText(s3);
                     bFoodStat.setText(s4);
+
+
+
+
+
+
+
+
 
                     String bookingID = "1";
                     String numPpl = dataSnapshot.child("numPeople").getValue().toString();
@@ -113,7 +118,9 @@ public class Checkout extends AppCompatActivity {
                                                 String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
                                                 mealList.add(new meals(foodname,foodprice));
 
+
                                                 mRecyclerView = findViewById(R.id.recyclerView);
+                                                mRecyclerView.setVisibility(View.VISIBLE);
                                                 mRecyclerView.setHasFixedSize(true);
                                                 mLayoutManager = new LinearLayoutManager(Checkout.this);
                                                 mAdapter = new CheckoutAdapter(mealList);
@@ -126,12 +133,10 @@ public class Checkout extends AppCompatActivity {
 
                                             }
                                         });
-                                        totalamt = mealList.size();
+                                        //totalamt = mealList.size();
+
                                     }
-                                    //for(int j)
-                                    //
-                                    String s5 = "Total amount: $" + totalamt;
-                                    bTotalAmount.setText(s5);
+
                                 }
                             }
 
@@ -141,6 +146,15 @@ public class Checkout extends AppCompatActivity {
                             }
                         });
 
+                        for(int j = 0; j < Integer.parseInt(dataSnapshot.child("FoodCount").getValue().toString()); j++){
+                            String jeff = "Item" + String.valueOf(j);
+                            String s5 = dataSnapshot.child("FoodItem").child(jeff).child("foodPrice").getValue().toString();
+                            int index = s5.indexOf("$");
+                            String s51 = s5.substring(index+1);
+                            totalamt = totalamt + Double.parseDouble(s51);
+                        }
+                        String s6 = "Total amount: $" + String.valueOf(totalamt);
+                        bTotalAmount.setText(s6);
 
 
                     } else {
@@ -164,6 +178,7 @@ public class Checkout extends AppCompatActivity {
             public void onClick(View view) {
                 reff4.child(currentUserId).setValue(booking);
                 reff4.child(currentUserId).child("OrderList").setValue(mealList);
+                reff4.child(currentUserId).child("TotalPrice").setValue(String.valueOf(totalamt));
                 DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
                 deleteRef.removeValue();
                 Toast.makeText(Checkout.this, "Booking Placed!", Toast.LENGTH_SHORT).show();

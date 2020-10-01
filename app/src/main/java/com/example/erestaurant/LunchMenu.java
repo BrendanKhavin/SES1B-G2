@@ -105,6 +105,7 @@ public class LunchMenu extends AppCompatActivity {
                                         public void onItemClick(int position) {
                                             reffy2.child("FoodItem").child("Item"+String.valueOf(x)).setValue(meallist.get(position));
                                             x++;
+                                            reffy2.child("FoodCount").setValue(x);
                                         }
                                     });
 
