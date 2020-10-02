@@ -73,7 +73,7 @@ public class booking extends AppCompatActivity {
         mconfirmBtn = findViewById(R.id.confirmBtn);
         //collecting data
         booking = new BookingDetails();
-        reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails");
+        reff4 = FirebaseDatabase.getInstance().getReference().child("ShopTemp");
 
         if(fAuth1.getCurrentUser() == null) {
             startActivity(new Intent(getApplicationContext(),Login.class));
@@ -95,6 +95,7 @@ public class booking extends AppCompatActivity {
                 }
                 String date = dateTextView.getText().toString();
                 String status = radioButton.getText().toString();
+                String food = "No";
                 booking.setBookingID(bookingID);
                 booking.setStatus(status);
                 booking.setDate(date);
@@ -109,7 +110,6 @@ public class booking extends AppCompatActivity {
                 } else {
 
                     reff4.child(currentUserId).setValue(booking);
-                    Toast.makeText(booking.this, "Booking Placed!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),NeedFood.class));
 
                 }

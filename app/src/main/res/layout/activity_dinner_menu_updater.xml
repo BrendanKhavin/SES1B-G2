@@ -14,6 +14,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -25,17 +26,9 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/meal7name"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/meal12update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
-        android:text="Update"
-        app:layout_constraintStart_toEndOf="@+id/meal7price"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView20"
@@ -45,6 +38,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="340dp"
         android:text="Meal 6:"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -56,6 +50,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -67,17 +62,9 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/meal7name"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/meal11update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="268dp"
-        android:text="Update"
-        app:layout_constraintStart_toEndOf="@+id/meal7price"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView19"
@@ -87,6 +74,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:text="Meal 5:"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -98,6 +86,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -109,17 +98,9 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/meal7name"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/meal10update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
-        android:text="Update"
-        app:layout_constraintStart_toEndOf="@+id/meal7price"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView18"
@@ -129,6 +110,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:text="Meal 4:"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -140,6 +122,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -151,17 +134,9 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/meal7name"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/meal9update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="Update"
-        app:layout_constraintStart_toEndOf="@+id/meal7price"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView17"
@@ -171,6 +146,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:text="Meal 3:"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -182,6 +158,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:text="Meal 2:"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -193,17 +170,9 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/meal7name"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/meal8update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="Update"
-        app:layout_constraintStart_toEndOf="@+id/meal7price"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
         android:id="@+id/meal8name"
@@ -213,6 +182,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -225,6 +195,7 @@
         android:layout_marginTop="52dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:textColor="@color/titleColour"
         android:text="this is the dinner menu updating page. insert stuff here!!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -233,14 +204,16 @@
 
     <Button
         android:id="@+id/backBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="76dp"
+        android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="303dp"
         android:layout_marginRight="303dp"
+        android:background="@drawable/btn_bg"
         android:text="Back"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -254,6 +227,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -265,6 +239,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="65dp"
         android:text="Meal 1:"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -276,6 +251,7 @@
         android:layout_marginLeft="140dp"
         android:layout_marginTop="26dp"
         android:text="Name"
+        android:textColor="@color/textColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -287,6 +263,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="26dp"
         android:text="Price: $"
+        android:textColor="@color/textColour"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -298,15 +275,97 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="14sp"
+        android:background="@drawable/et_bg"
         app:layout_constraintStart_toEndOf="@+id/meal7name"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
         android:id="@+id/meal7update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toEndOf="@+id/meal7price"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/meal8update"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/btn_bg"
+        android:text="Update"
+        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/meal7price"
+        app:layout_constraintTop_toBottomOf="@+id/meal7update" />
+
+    <Button
+        android:id="@+id/meal9update"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/btn_bg"
+        android:text="Update"
+        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/meal7price"
+        app:layout_constraintTop_toBottomOf="@+id/meal8update" />
+
+    <Button
+        android:id="@+id/meal10update"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/btn_bg"
+        android:text="Update"
+        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/meal10price"
+        app:layout_constraintTop_toBottomOf="@+id/meal9update" />
+
+    <Button
+        android:id="@+id/meal11update"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/btn_bg"
+        android:text="Update"
+        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/meal7price"
+        app:layout_constraintTop_toBottomOf="@+id/meal10update" />
+
+    <Button
+        android:id="@+id/meal12update"
+        android:layout_width="82dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/btn_bg"
+        android:text="Update"
+        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toEndOf="@+id/meal7price"
+        app:layout_constraintTop_toBottomOf="@+id/meal11update" />
 </androidx.constraintlayout.widget.ConstraintLayout>

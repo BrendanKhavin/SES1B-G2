@@ -26,14 +26,10 @@ public class MainActivity extends AppCompatActivity {
     //new
     //TextView mFullName, mAge, mFavFood, mEmail;
     //end
-<<<<<<< HEAD
-    Button mProfile, mOrder, mHistory;
     private DatabaseReference reff;
     private FirebaseAuth bAuth;
     String currentUserID;
-=======
-    Button mProfile, mOrder, mHistory,mMenu;
->>>>>>> master
+    Button mProfile, mOrder, mHistory, mMenu;
     //DatabaseReference reff2;
     //FirebaseAuth fAuth;
 
@@ -53,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
         mProfile = findViewById(R.id.profileBtn);
         mOrder = findViewById(R.id.orderBtn);
         mHistory = findViewById(R.id.historyBtn);
-        mMenu = findViewById(R.id.ViewMenu);
+        mMenu = findViewById(R.id.viewMenuBtn);
 
         bAuth = FirebaseAuth.getInstance();
 
-        if(bAuth.getCurrentUser() == null) {
-            startActivity(new Intent(getApplicationContext(),Login.class));
+        if (bAuth.getCurrentUser() == null) {
+            startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
 
@@ -68,56 +64,53 @@ public class MainActivity extends AppCompatActivity {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    mOrder.setEnabled(false);
+                if (!dataSnapshot.exists()) {
+                    mHistory.setEnabled(false);
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-            }});
-
-
-            mOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),booking.class));
             }
         });
 
 
-<<<<<<< HEAD
-=======
+
+
+        mOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), booking.class));
+            }
+        });
+
         //ViewMenu
 
         mMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),WhatMenu.class));
+                startActivity(new Intent(getApplicationContext(), WhatMenu.class));
             }
         });
 
->>>>>>> master
+
         mProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),profile.class));
+                startActivity(new Intent(getApplicationContext(), profile.class));
             }
         });
 
         mHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),History.class));
+                startActivity(new Intent(getApplicationContext(), History.class));
             }
         });
 
-
     }
-    public void logout(View view){ //log out my user and send to login page
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-    }
-
-
+        public void logout (View view){ //log out my user and send to login page
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
+        }
 }

@@ -93,7 +93,7 @@ public class profile extends AppCompatActivity {
                     mProfileFavFood.setText(myFood);
                 } else {
 
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -103,7 +103,7 @@ public class profile extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(profile.this, "unable", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(profile.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

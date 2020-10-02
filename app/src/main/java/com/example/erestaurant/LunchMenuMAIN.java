@@ -40,7 +40,7 @@ public class LunchMenuMAIN extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lunch_menu);
+        setContentView(R.layout.activity_lunch_menu_formain);
 
         //current use null check
         bAuth = FirebaseAuth.getInstance();
@@ -50,47 +50,6 @@ public class LunchMenuMAIN extends AppCompatActivity {
             finish();
         }
 
-
-        /*
-        ArrayList<meals> meallist = new ArrayList<>();
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-
-        mRecyclerView = findViewById(R.id.recyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new CardAdapter(meallist);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-                        //get the count value for the lunch meals data
-                     count = dataSnapshot.getChildrenCount();
-                        //set lunch meal list
-                        ArrayList<meals> meallist = new ArrayList<>();
-                            for (long i = 1; i <= count; i++) {
-                                String foodname = dataSnapshot.child("foodName").getValue().toString();
-                                String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
-                                meallist.add(new meals(foodname, foodprice));
-
-                                mRecyclerView = findViewById(R.id.recyclerView);
-                                mRecyclerView.setHasFixedSize(true);
-                                mLayoutManager = new LinearLayoutManager(LunchMenu.this);
-                                mAdapter = new CardAdapter(meallist);
-                                mRecyclerView.setLayoutManager(mLayoutManager);
-                                mRecyclerView.setAdapter(mAdapter);
-         */
         final ArrayList<meals> meallist = new ArrayList<>();
         reffy = FirebaseDatabase.getInstance().getReference().child("meals").child("Lunch");
         reffy.addValueEventListener(new ValueEventListener() {
@@ -121,26 +80,26 @@ public class LunchMenuMAIN extends AppCompatActivity {
                                     mRecyclerView.setAdapter(mAdapter);
                                 } else {
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                 }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                                Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

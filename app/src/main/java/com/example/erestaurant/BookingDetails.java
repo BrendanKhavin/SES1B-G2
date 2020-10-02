@@ -6,6 +6,8 @@ public class BookingDetails {
     private String Date;
     private String Session;
     private String Status;
+    private String FoodSTat;
+
 
     public String getBookingID() {
         return bookingID;
@@ -46,4 +48,15 @@ public class BookingDetails {
     public void setStatus(String status) {
         Status = status;
     }
+
+    public String getFoodSTat() {
+        return FoodSTat;
+    }
+
+    public void setFoodSTat(String food) {
+        FoodSTat = food;
+    }
+
+
 }
+

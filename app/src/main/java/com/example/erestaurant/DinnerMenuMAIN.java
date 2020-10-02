@@ -40,7 +40,7 @@ public class DinnerMenuMAIN extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dinner_menu);
+        setContentView(R.layout.activity_dinner_menu_formain);
 
         //current use null check
         bAuth = FirebaseAuth.getInstance();
@@ -121,26 +121,25 @@ public class DinnerMenuMAIN extends AppCompatActivity {
                                     mRecyclerView.setAdapter(mAdapter);
                                 } else {
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                 }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                                Toast.makeText(DinnerMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                                // Toast.makeText(DinnerMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-                }
+                }  // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(DinnerMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(DinnerMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -17,27 +17,33 @@
         android:layout_marginRight="153dp"
         android:layout_marginBottom="620dp"
         android:text="Make A Booking!"
+        android:textSize="24sp"
+        android:textColor="@color/titleColour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/backBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="74dp"
+        android:layout_height="37dp"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="46dp"
         android:layout_marginRight="46dp"
         android:layout_marginBottom="540dp"
+        android:background="@drawable/btn_bg"
         android:text="Back"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/dateTextView"
@@ -49,24 +55,28 @@
         android:layout_marginEnd="206dp"
         android:layout_marginRight="206dp"
         android:text=""
+        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+
     <Button
         android:id="@+id/dateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="102dp"
+        android:layout_height="53dp"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginEnd="151dp"
         android:layout_marginRight="151dp"
+        android:background="@drawable/btn_bg"
         android:onClick="btn_PickerDate"
         android:text="Select Date"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
-
 
     <TextView
         android:id="@+id/text_view_selected"
@@ -80,6 +90,7 @@
         android:text="Please select a time and the amount of people you wish to reserve:"
         android:textSize="17sp"
         android:visibility="invisible"
+        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         tools:visibility="visible" />
@@ -104,6 +115,8 @@
             android:checked="false"
             android:onClick="checkButton"
             android:text="Lunch"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -113,6 +126,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton"
             android:text="Dinner"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
 
@@ -143,6 +158,8 @@
             android:checked="true"
             android:onClick="checkButton3"
             android:text="12pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -152,6 +169,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton3"
             android:text="1pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
 
@@ -161,6 +180,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton3"
             android:text="2pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -170,6 +191,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton3"
             android:text="3pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -201,6 +224,8 @@
             android:checked="true"
             android:onClick="checkButton3"
             android:text="6pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -210,6 +235,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton3"
             android:text="7pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
 
@@ -219,6 +246,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton3"
             android:text="8pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -228,6 +257,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton3"
             android:text="9pm"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -257,6 +288,8 @@
             android:checked="true"
             android:onClick="checkButton4"
             android:text="2"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="425dp" />
 
@@ -266,6 +299,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton4"
             android:text="3"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
 
@@ -275,6 +310,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton4"
             android:text="4"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
 
@@ -284,6 +321,8 @@
             android:layout_height="wrap_content"
             android:onClick="checkButton4"
             android:text="5"
+            android:buttonTint="@color/textColour"
+            android:textColor="@color/HeadingColour"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="457dp" />
 
@@ -299,6 +338,7 @@
         android:layout_marginTop="19dp"
         android:text="Please select session and how many you wish to reserve:"
         android:textSize="17sp"
+        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateButton" />
 
@@ -306,14 +346,17 @@
         android:id="@+id/confirmBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginLeft="154dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginRight="169dp"
+        android:layout_marginStart="161.5dp"
+        android:layout_marginLeft="161.5dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="161.5dp"
+        android:layout_marginRight="161.6dp"
         android:text="Confirm"
         android:visibility="invisible"
+        android:background="@drawable/btn_bg"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 

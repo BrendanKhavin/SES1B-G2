@@ -34,10 +34,6 @@ public class NeedFood extends AppCompatActivity {
     //get user id
     String currentUserId, status;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +47,7 @@ public class NeedFood extends AppCompatActivity {
         //get user id
         currentUserId= fAuth1.getCurrentUser().getUid();
         //go to users booking branch
-        reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child(currentUserId);
-
+        reff4 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
         mYesBtn = findViewById(R.id.YesBtn);
         mNoBtn = findViewById(R.id.NoBtn);
 
@@ -67,17 +62,14 @@ public class NeedFood extends AppCompatActivity {
                     status = dataSnapshot.child("status").getValue().toString();
                 } else {
 
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
-
-
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(NeedFood.this, "unable", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(NeedFood.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -87,9 +79,15 @@ public class NeedFood extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(status.equals("Lunch")) {
+                    String AddFood = "Yes";
+                    reff4.child("Food").setValue(AddFood);
                     startActivity(new Intent(getApplicationContext(),LunchMenu.class));
+
                 } else {
+                    String AddFood = "Yes";
+                    reff4.child("Food").setValue(AddFood);
                     startActivity(new Intent(getApplicationContext(),DinnerMenu.class));
+
                 }
                // reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child();
             }
@@ -99,7 +97,9 @@ public class NeedFood extends AppCompatActivity {
         mNoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                String AddFood = "No";
+                reff4.child("Food").setValue(AddFood);
+                startActivity(new Intent(getApplicationContext(),Checkout.class));
             }
         });
 
