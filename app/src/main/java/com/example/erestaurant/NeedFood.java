@@ -59,10 +59,10 @@ public class NeedFood extends AppCompatActivity {
 
                 if(dataSnapshot.exists()) {
                     status = dataSnapshot.child("status").getValue().toString();
-                }// else {
+                } else {
 
-                    //Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-                //}
+                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override

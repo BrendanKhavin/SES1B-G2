@@ -102,10 +102,8 @@ public class booking extends AppCompatActivity {
                 if(date.equals("")) {
                     Toast.makeText(com.example.erestaurant.booking.this, "Please select a date", Toast.LENGTH_SHORT).show();
                 } else {
-
                     reff4.child(currentUserId).setValue(booking);
                     startActivity(new Intent(getApplicationContext(), NeedFood.class));
-
                 }
 
             }
