@@ -6,6 +6,331 @@
     android:layout_height="match_parent"
     tools:context=".LunchMenuUpdater">
 
+    <Button
+        android:id="@+id/prevBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:text="previous"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meal6update2"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/nextBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:text="next"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meal6update2" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
+        android:text="Meal 10:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/meal6update2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="324dp"
+        android:text="Update"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1price"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal5name2"
+        android:layout_width="168dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="228dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/meal4update2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="212dp"
+        android:text="Update"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1price"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="65dp"
+        android:text="Meal 7:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal2price2"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1name"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
+        android:text="Meal 8:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal1price2"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1name"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal1name2"
+        android:layout_width="168dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/meal2update2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Update"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1price"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
+        android:text="Meal 11:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal6name2"
+        android:layout_width="168dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="284dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/meal3update2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Update"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1price"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/meal5update2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
+        android:text="Update"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1price"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal4name2"
+        android:layout_width="168dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="172dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="340dp"
+        android:text="Meal 12:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
+        android:text="Meal 9:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal2name2"
+        android:layout_width="168dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal5price2"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="228dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1name"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal3price2"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1name"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal6price2"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="284dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1name"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal4price2"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="172dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1name"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/meal3name2"
+        android:layout_width="168dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/meal1update2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Update"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/meal1price"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:visibility="visible" />
+
     <EditText
         android:id="@+id/meal6name"
         android:layout_width="168dp"

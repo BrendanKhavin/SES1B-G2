@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class Checkout extends AppCompatActivity {
      private String currentUserId;
      private FirebaseAuth bAuth;
@@ -26,13 +29,12 @@ public class Checkout extends AppCompatActivity {
      private RecyclerView.LayoutManager mLayoutManager;
      Button mContinueBtn;
      TextView bDate, bTime, bSeating, bFoodStat,bTotalAmount;
-     float jeff = 69;
-
-
+     double totalamt = 0.0;
      BookingDetails booking;
      long count;
-     DatabaseReference reff2,reff4, reff69;
-
+     int x = 0;
+     ArrayList<meals> mealList = new ArrayList<>();
+     DatabaseReference reff2,reff4, reff69, reffy1,reff3;
 
 
     @Override
@@ -47,6 +49,15 @@ public class Checkout extends AppCompatActivity {
         }
         mContinueBtn = findViewById(R.id.goBackBtn);
 
+       bAuth = FirebaseAuth.getInstance();
+       currentUserId = bAuth.getCurrentUser().getUid();
+
+       if(bAuth.getCurrentUser() == null) {
+          startActivity(new Intent(getApplicationContext(), Login.class));
+             finish();
+        }
+        mContinueBtn = findViewById(R.id.goBackBtn);
+
        bDate = (TextView) findViewById(R.id.TextView1);
        bTime = (TextView) findViewById(R.id.TextView2);
        bSeating = (TextView) findViewById(R.id.TextView3);
@@ -55,9 +66,10 @@ public class Checkout extends AppCompatActivity {
 
         reff2 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
         reff69 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem");
-
         booking = new BookingDetails();
+
         reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails");
+
         reff2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -73,6 +85,14 @@ public class Checkout extends AppCompatActivity {
                     bSeating.setText(s3);
                     bFoodStat.setText(s4);
 
+
+
+
+
+
+
+
+
                     String bookingID = "1";
                     String numPpl = dataSnapshot.child("numPeople").getValue().toString();
                     String time = dataSnapshot.child("session").getValue().toString();
@@ -86,27 +106,77 @@ public class Checkout extends AppCompatActivity {
                     booking.setNumPeople(numPpl);
                     booking.setFoodSTat(food);
 
+
                     if(food.equals("Yes")) {
-                        //for (int x = 0; x<=100; x++){
-                        //    String y = dataSnapshot.child("FoodItem").child("Item"+String.valueOf(x)).getValue().toString();
-                        //    int i = Integer.parseInt(y);
-                        //    jeff = jeff + i;
-                        //}
-                        String s5 = "Total amount:  $" + String.valueOf(jeff);
-                        bTotalAmount.setText(s5);
+                        reff69.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists()){
+                                    count = dataSnapshot.getChildrenCount();
+                                    double totalList = 0.0;
+
+                                    for(int i = 0; i < count ; i++){
+                                        final String item = "Item" + i;
+                                        reffy1 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem").child(item);
+                                        reffy1.addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                String foodname = dataSnapshot.child("foodName").getValue().toString();
+                                                String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
+                                                mealList.add(new meals(foodname,foodprice));
+
+
+                                                mRecyclerView = findViewById(R.id.recyclerView);
+                                                mRecyclerView.setVisibility(View.VISIBLE);
+                                                mRecyclerView.setHasFixedSize(true);
+                                                mLayoutManager = new LinearLayoutManager(Checkout.this);
+                                                mAdapter = new CheckoutAdapter(mealList);
+                                                mRecyclerView.setLayoutManager(mLayoutManager);
+                                                mRecyclerView.setAdapter(mAdapter);
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                        //totalamt = mealList.size();
+
+                                    }
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+                        for(int j = 0; j < Integer.parseInt(dataSnapshot.child("FoodCount").getValue().toString()); j++){
+                            String jeff = "Item" + String.valueOf(j);
+                            String s5 = dataSnapshot.child("FoodItem").child(jeff).child("foodPrice").getValue().toString();
+                            int index = s5.indexOf("$");
+                            String s51 = s5.substring(index+1);
+                            totalamt = totalamt + Double.parseDouble(s51);
+                        }
+                        String s6 = "Total amount: $" + String.valueOf(totalamt);
+                        bTotalAmount.setText(s6);
+
 
                     } else {
                         String s5 = " Total amount: No charge " ;
                         bTotalAmount.setText(s5);
                     }
                 } else {
-                    // Toast.makeText(getApplicationContext(), "Not Found", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Not Found", Toast.LENGTH_LONG).show();
                 }
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Toast.makeText(Checkout.this, "unable", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Checkout.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -114,6 +184,8 @@ public class Checkout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 reff4.child(currentUserId).setValue(booking);
+                reff4.child(currentUserId).child("OrderList").setValue(mealList);
+                reff4.child(currentUserId).child("TotalPrice").setValue(String.valueOf(totalamt));
                 DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
                 deleteRef.removeValue();
                 Toast.makeText(Checkout.this, "Booking Placed!", Toast.LENGTH_SHORT).show();

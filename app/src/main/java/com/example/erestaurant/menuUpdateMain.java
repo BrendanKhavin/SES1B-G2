@@ -1,11 +1,11 @@
 package com.example.erestaurant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class menuUpdateMain extends AppCompatActivity {
 
@@ -25,19 +25,19 @@ public class menuUpdateMain extends AppCompatActivity {
         mbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),staffmain.class));
+                startActivity(new Intent(getApplicationContext(), staffmain.class));
             }
         });
         mlunchUpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),LunchMenuUpdater.class));
+                startActivity(new Intent(getApplicationContext(), LunchMenuUpdater.class));
             }
         });
         mdinnerupdatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),DinnerMenuUpdater.class));
+                startActivity(new Intent(getApplicationContext(), DinnerMenuUpdater.class));
             }
         });
 

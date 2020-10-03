@@ -1,8 +1,5 @@
 package com.example.erestaurant;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,7 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Member;
 public class Register extends AppCompatActivity {
     EditText mFullName,mEmail,mPassword, mAge, mFavFood, mUserKey;
     Button mRegisterBtn;
@@ -130,7 +129,7 @@ public class Register extends AppCompatActivity {
                             reff.child(currentUserId).setValue(member);
 
 
-                            startActivity(new Intent(getApplicationContext(),Login.class));
+                            startActivity(new Intent(getApplicationContext(), Login.class));
                         } else {
                             Toast.makeText(Register.this, "Error! " + task.getException(),Toast.LENGTH_SHORT).show();
                         }
@@ -142,7 +141,7 @@ public class Register extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
 

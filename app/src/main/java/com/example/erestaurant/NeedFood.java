@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -41,7 +40,7 @@ public class NeedFood extends AppCompatActivity {
 
         fAuth1 = FirebaseAuth.getInstance();
         if(fAuth1.getCurrentUser() == null) {
-            startActivity(new Intent(getApplicationContext(),Login.class));
+            startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
         //get user id
@@ -81,12 +80,12 @@ public class NeedFood extends AppCompatActivity {
                 if(status.equals("Lunch")) {
                     String AddFood = "Yes";
                     reff4.child("Food").setValue(AddFood);
-                    startActivity(new Intent(getApplicationContext(),LunchMenu.class));
+                    startActivity(new Intent(getApplicationContext(), LunchMenu.class));
 
                 } else {
                     String AddFood = "Yes";
                     reff4.child("Food").setValue(AddFood);
-                    startActivity(new Intent(getApplicationContext(),DinnerMenu.class));
+                    startActivity(new Intent(getApplicationContext(), DinnerMenu.class));
 
                 }
                // reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child();
@@ -99,7 +98,7 @@ public class NeedFood extends AppCompatActivity {
             public void onClick(View view) {
                 String AddFood = "No";
                 reff4.child("Food").setValue(AddFood);
-                startActivity(new Intent(getApplicationContext(),Checkout.class));
+                startActivity(new Intent(getApplicationContext(), Checkout.class));
             }
         });
 

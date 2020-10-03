@@ -58,7 +58,7 @@ public class DinnerMenu extends AppCompatActivity {
         mContinueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Checkout.class));
+                startActivity(new Intent(getApplicationContext(), Checkout.class));
                 // reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child();
             }
         });
@@ -95,6 +95,17 @@ public class DinnerMenu extends AppCompatActivity {
                                     mAdapter = new CardAdapter(meallist);
                                     mRecyclerView.setLayoutManager(mLayoutManager);
                                     mRecyclerView.setAdapter(mAdapter);
+
+                                    mAdapter.setOnItemClickListener(new CardAdapter.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(int position) {
+                                            reffy2.child("FoodItem").child("Item"+String.valueOf(x)).setValue(meallist.get(position));
+                                            x++;
+                                            reffy2.child("FoodCount").setValue(x);
+                                        }
+                                    });
+
+                                } else {
 
                                     mAdapter.setOnItemClickListener(new CardAdapter.OnItemClickListener() {
                                         @Override

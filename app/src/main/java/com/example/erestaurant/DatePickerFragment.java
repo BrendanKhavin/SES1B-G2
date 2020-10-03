@@ -1,7 +1,6 @@
 package com.example.erestaurant;
 
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;

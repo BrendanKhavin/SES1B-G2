@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,8 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:gravity="center_horizontal"
-        android:text="Checkout"
+        android:text="Check Out"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@color/titleColour"
         android:textSize="24sp"
@@ -76,11 +77,60 @@
         android:visibility="gone" />
 
     <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Date:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TextView"/>
+    <TextView
+        android:id="@+id/TextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Time:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TextView1"/>
+    <TextView
+        android:id="@+id/TextView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Table for:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TextView2"/>
+    <TextView
+        android:id="@+id/TextView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Need Food?:"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TextView3"/>
+
+    <TextView
         android:id="@+id/PriceView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recyclerView"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
         android:text="Total amount:"
         android:textAlignment="center"
@@ -92,11 +142,12 @@
         android:id="@+id/goBackBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
         android:layout_below="@+id/PriceView"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_bg"
         android:textColor="@color/HeadingColour"
         android:text="Confirm Booking"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
 
 </RelativeLayout>

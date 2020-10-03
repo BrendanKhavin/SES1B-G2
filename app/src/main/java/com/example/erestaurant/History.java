@@ -2,7 +2,6 @@ package com.example.erestaurant;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -43,7 +42,7 @@ public class History extends AppCompatActivity {
         bAuth = FirebaseAuth.getInstance();
 
         if(bAuth.getCurrentUser() == null) {
-            startActivity(new Intent(getApplicationContext(),Login.class));
+            startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
 
@@ -66,13 +65,14 @@ public class History extends AppCompatActivity {
                     bookingSeating.setText(bNumPeople);
                     bookingSession.setText(bStatus);
                 } else {
-                    Toast.makeText(getApplicationContext(), "No Booking Exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Booking Not Found", Toast.LENGTH_LONG).show();
                     modifyBtn.setText("Create Booking");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(History.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 
