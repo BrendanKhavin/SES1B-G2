@@ -24,6 +24,8 @@ public class booking extends AppCompatActivity {
     TextView textView;
     String ButtonP, currentUserId, name, test, testid;
 
+    Button mCancelBtn;
+
 
     //database stuff
     BookingDetails booking;
@@ -52,6 +54,8 @@ public class booking extends AppCompatActivity {
         radioButton3 = findViewById(radioId3);
         radioButton4 = findViewById(radioId4);
         testid = "1";
+
+
 
         mBackBtn = findViewById(R.id.backBtn);
         dateTextView = findViewById(R.id.dateTextView);
@@ -108,6 +112,7 @@ public class booking extends AppCompatActivity {
 
             }
         });
+
     }
 
 

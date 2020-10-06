@@ -107,7 +107,7 @@ public class DinnerMenu extends AppCompatActivity {
 
                                 } else {
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                  //  Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -119,7 +119,7 @@ public class DinnerMenu extends AppCompatActivity {
                         });
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
             }
 

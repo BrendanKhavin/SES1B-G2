@@ -51,10 +51,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/managebookBtn"
+        android:id="@+id/tableLimitBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Manage Bookings"
+        android:text="Manage Table Limits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuupdateBtn" />
@@ -67,6 +67,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/managebookBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLimitBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

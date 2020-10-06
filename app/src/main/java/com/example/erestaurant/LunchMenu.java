@@ -110,7 +110,7 @@ public class LunchMenu extends AppCompatActivity {
 
                                 } else {
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                //    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -122,7 +122,7 @@ public class LunchMenu extends AppCompatActivity {
                         });
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                  //  Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
             }
 

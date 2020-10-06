@@ -21,8 +21,11 @@ public class History extends AppCompatActivity {
     Button modifyBtn, deleteBtn, backBtn;
     TextView bookingDate, bookingTime, bookingSeating, bookingSession,bookingFoodSituation;
     String currentUserID;
-    private DatabaseReference reff;
+    private DatabaseReference reff, reff2, reff3;
     private FirebaseAuth bAuth;
+    String mytime, mydate, myLimit;
+    int i, mycheck;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +67,30 @@ public class History extends AppCompatActivity {
                     bookingTime.setText(bTime);
                     bookingSeating.setText(bNumPeople);
                     bookingSession.setText(bStatus);
+                    mydate = dataSnapshot.child("date").getValue().toString();
+                    mytime =dataSnapshot.child("session").getValue().toString();
+                    reff2 = FirebaseDatabase.getInstance().getReference().child("Seatings").child(mydate).child(mytime).child("Limit");
+                    Toast.makeText(History.this, "my date is " +mydate+ "---mytime is "+mytime, Toast.LENGTH_SHORT).show();
+                    deleteBtn.setClickable(true);
+                    reff2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists())  {
+                                myLimit = dataSnapshot.getValue().toString();
+                                Toast.makeText(History.this, "my value is " +myLimit, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
                 } else {
-                    Toast.makeText(getApplicationContext(), "Booking Not Found", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), "Booking Not Found", Toast.LENGTH_LONG).show();
                     modifyBtn.setText("Create Booking");
+                    deleteBtn.setClickable(false);
                 }
             }
 
@@ -79,13 +103,15 @@ public class History extends AppCompatActivity {
         modifyBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view) {
-                startActivity(new Intent(getApplicationContext(), booking.class));
+               startActivity(new Intent(getApplicationContext(), booking.class));
             }
         });
 
         deleteBtn.setOnClickListener(new  View.OnClickListener(){
             @Override
             public void onClick (View view){
+
+
                 DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child(currentUserID);
                 deleteRef.removeValue();
                 bookingDate.setText("");
@@ -93,6 +119,23 @@ public class History extends AppCompatActivity {
                 bookingSeating.setText("");
                 bookingSession.setText("");
                 bookingFoodSituation.setText("");
+
+                int myGL = Integer.parseInt(myLimit);
+                for (i = 0; i <= 1; i++) {
+                    if(mycheck != 1) {
+                        int myNewL = myGL + 1;
+                        reff2.setValue(myNewL);
+                        mycheck = 1;
+
+                    }
+
+                }
+
+                deleteBtn.setClickable(false);
+
+
+
+
             }
         });
 
@@ -102,6 +145,7 @@ public class History extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
-
+        mycheck = 0;
+       // i =0;
     }
 }

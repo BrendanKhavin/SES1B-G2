@@ -80,7 +80,7 @@ public class LunchMenuMAIN extends AppCompatActivity {
                                     mRecyclerView.setAdapter(mAdapter);
                                 } else {
 
-                                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                //    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -92,7 +92,7 @@ public class LunchMenuMAIN extends AppCompatActivity {
                         });
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                 }
             }
 
