@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,50 +10,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Recent Bookings"
-        android:textSize="24sp"
-        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/modifyBtn"
-        android:layout_width="168dp"
-        android:layout_height="132dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="324dp"
-        android:background="@drawable/btn_bg"
-        android:gravity="center|bottom"
-        android:padding="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="396dp"
         android:text="Modify"
-        android:textColor="@color/HeadingColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/historyTV" />
+        app:layout_constraintTop_toBottomOf="@+id/historyTV"
+        app:layout_constraintVertical_bias="0.142" />
 
     <Button
         android:id="@+id/deleteBtn"
-        android:layout_width="168dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="324dp"
-        android:background="@drawable/btn_bg"
-        android:gravity="center|bottom"
-        android:padding="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Delete"
-        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
-        app:layout_constraintStart_toEndOf="@+id/modifyBtn"
-        app:layout_constraintTop_toBottomOf="@+id/historyTV" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modifyBtn"
+        app:layout_constraintVertical_bias="0.02" />
 
     <Button
         android:id="@+id/backBtn"
-        android:layout_width="74dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btn_bg"
         android:text="Back"
-        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toStartOf="@+id/historyTV"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,47 +55,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text=""
-        android:textColor="@color/textColour"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/foodReqTxt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text=""
-        android:textColor="@color/textColour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sessionTxt" />
-
-    <TextView
-        android:id="@+id/sessionTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text=""
-        android:textColor="@color/textColour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seatingTxt" />
-
-    <TextView
-        android:id="@+id/seatingTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text=""
-        android:textColor="@color/textColour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeTxt" />
 
     <TextView
         android:id="@+id/timeTxt"
@@ -114,11 +66,43 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text=""
-        android:textColor="@color/textColour"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTxt" />
+
+    <TextView
+        android:id="@+id/seatingTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeTxt" />
+
+    <TextView
+        android:id="@+id/sessionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seatingTxt" />
+
+    <TextView
+        android:id="@+id/foodReqTxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sessionTxt" />
 
     <TextView
         android:id="@+id/textView7"
@@ -128,7 +112,6 @@
         android:layout_marginLeft="88dp"
         android:layout_marginTop="24dp"
         android:text="Date:"
-        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backBtn" />
 
@@ -140,7 +123,6 @@
         android:layout_marginLeft="84dp"
         android:layout_marginTop="24dp"
         android:text="Time:"
-        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -152,7 +134,6 @@
         android:layout_marginLeft="68dp"
         android:layout_marginTop="24dp"
         android:text="Seating:"
-        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -164,7 +145,6 @@
         android:layout_marginLeft="68dp"
         android:layout_marginTop="24dp"
         android:text="Session:"
-        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -176,7 +156,6 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         android:text="Food required?"
-        android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 

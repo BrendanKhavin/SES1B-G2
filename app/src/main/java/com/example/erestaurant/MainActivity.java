@@ -1,17 +1,10 @@
 package com.example.erestaurant;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -24,8 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
     //new
     //TextView mFullName, mAge, mFavFood, mEmail;
@@ -33,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference reff;
     private FirebaseAuth bAuth;
     String currentUserID;
-    Button mProfile, mOrder, mHistory, mMenu;
+    Button mProfile, mOrder, mHistory,mMenu;
     //DatabaseReference reff2;
     //FirebaseAuth fAuth;
 
@@ -53,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         mProfile = findViewById(R.id.profileBtn);
         mOrder = findViewById(R.id.orderBtn);
         mHistory = findViewById(R.id.historyBtn);
-        mMenu = findViewById(R.id.viewMenuBtn);
+        mMenu = findViewById(R.id.ViewMenu);
 
         bAuth = FirebaseAuth.getInstance();
 
-        if (bAuth.getCurrentUser() == null) {
+        if(bAuth.getCurrentUser() == null) {
             startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
@@ -66,21 +57,6 @@ public class MainActivity extends AppCompatActivity {
         reff = FirebaseDatabase.getInstance().getReference().child("BookingDetails").child(currentUserID);
 
         reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!dataSnapshot.exists()) {
-                    mHistory.setEnabled(false);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-
-
-
-
-        mOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -98,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), booking.class));
             }
         });
+
+
 
         //ViewMenu
 
@@ -123,10 +101,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
-        public void logout (View view){ //log out my user and send to login page
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), Login.class));
-            finish();
-        }
+    public void logout(View view){ //log out my user and send to login page
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(), Login.class));
+        finish();
+    }
+
+
 }

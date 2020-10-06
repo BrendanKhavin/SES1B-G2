@@ -17,24 +17,18 @@
         android:layout_marginRight="172dp"
         android:layout_marginBottom="34dp"
         android:text="Select a menu to update"
-        android:textSize="24sp"
-        android:textColor="@color/titleColour"
         app:layout_constraintBottom_toTopOf="@+id/lunchpgBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/lunchpgBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:background="@drawable/btn_bg"
+        android:layout_marginTop="17dp"
         android:text="Lunch menu"
-        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backBtn" />
 
@@ -42,25 +36,19 @@
         android:id="@+id/dinnerpgBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/btn_bg"
         android:text="Dinner Menu"
-        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lunchpgBtn" />
 
     <Button
         android:id="@+id/backBtn"
-        android:layout_width="68dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/btn_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="82dp"
         android:text="Back"
-        android:textColor="@color/HeadingColour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

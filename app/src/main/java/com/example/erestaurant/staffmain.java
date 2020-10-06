@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class staffmain extends AppCompatActivity {
 
-    Button mUpdateMenus, mStaffKey;
+    Button mUpdateMenus, mStaffKey, mTableLimit;
     DatabaseReference reff;
     FirebaseAuth fAuth;
     String currentUserId;
@@ -29,6 +29,7 @@ public class staffmain extends AppCompatActivity {
 
         mUpdateMenus = findViewById(R.id.menuupdateBtn);
         mStaffKey = findViewById(R.id.staffKeyBtn);
+        mTableLimit = findViewById(R.id.tableLimitBtn);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -77,6 +78,12 @@ public class staffmain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), keyGen.class));
+            }
+        });
+        mTableLimit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), tableLimit.class));
             }
         });
 

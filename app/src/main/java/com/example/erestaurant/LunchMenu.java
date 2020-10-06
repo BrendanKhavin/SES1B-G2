@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -111,34 +110,27 @@ public class LunchMenu extends AppCompatActivity {
 
                                 } else {
 
-                                    mAdapter.setOnItemClickListener(new CardAdapter.OnItemClickListener() {
-                                        @Override
-                                        public void onItemClick(int position) {
-                                            reffy2.child("FoodItem").child("Item"+String.valueOf(x)).setValue(meallist.get(position));
-                                            x++;
-                                        }
-                                    });
-
-                                }  // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-
+                                //    Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                                }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
                                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                                // Toast.makeText(LunchMenu.this, "unable", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LunchMenu.this, "unable", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
-                }  // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-
+                } else {
+                  //  Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+                }
             }
 
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                // Toast.makeText(LunchMenu.this, "unable", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LunchMenu.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

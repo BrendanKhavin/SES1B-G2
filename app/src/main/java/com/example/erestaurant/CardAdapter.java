@@ -1,10 +1,8 @@
 package com.example.erestaurant;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,7 +54,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                     }
                 }
             });
-
         }
     }
 
@@ -80,9 +77,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         int temp = position;
         holder.mTextView1.setText(currentItem.getFoodName());
         holder.mTextView2.setText(currentItem.getFoodPrice());
-
-
-
 
 
         //holder.mAddToCart.setOnClickListener(new View.OnClickListener(){

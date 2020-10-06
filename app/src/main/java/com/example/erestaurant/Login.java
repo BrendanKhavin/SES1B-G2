@@ -3,8 +3,6 @@ package com.example.erestaurant;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,13 +34,13 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         mFullName = findViewById(R.id.fullName);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.Password);
         mLoginBtn = findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
         fAuth = FirebaseAuth.getInstance();
+
 
 
 
@@ -81,14 +79,15 @@ public class Login extends AppCompatActivity {
                                     if(dataSnapshot.exists()) {
                                         String mykey = dataSnapshot.child("userKey").getValue().toString();
                                         if(mykey.equals("User")) {
-                                            Toast.makeText(Login.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                            Toast.makeText(Login.this, "Logged in successful", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                         } else {
                                             Toast.makeText(Login.this, "Welcome Staff Member", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(getApplicationContext(), staffmain.class));
                                         }
                                     } else {
-                                        //Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
+
+                                        Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
                                     }
 
                                 }
