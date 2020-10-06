@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tableLimit">
+
+    <EditText
+        android:id="@+id/time7pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/time6pm" />
+
+    <EditText
+        android:id="@+id/time9pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView40"
+        app:layout_constraintTop_toBottomOf="@+id/time8pm" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="15dp"
+        android:text="8pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="15dp"
+        android:text="9pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <Button
+        android:id="@+id/update9pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time9pm"
+        app:layout_constraintTop_toBottomOf="@+id/update8pm" />
+
+    <Button
+        android:id="@+id/update8pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time8pm"
+        app:layout_constraintTop_toBottomOf="@+id/update7pm" />
+
+    <EditText
+        android:id="@+id/time8pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/time7pm" />
+
+    <Button
+        android:id="@+id/update7pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time7pm"
+        app:layout_constraintTop_toBottomOf="@+id/update6pm" />
+
+    <EditText
+        android:id="@+id/time6pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/time3pm" />
+
+    <Button
+        android:id="@+id/update6pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time6pm"
+        app:layout_constraintTop_toBottomOf="@+id/update3pm" />
+
+    <EditText
+        android:id="@+id/time3pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/time2pm" />
+
+    <Button
+        android:id="@+id/update3pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time3pm"
+        app:layout_constraintTop_toBottomOf="@+id/update2pm" />
+
+    <EditText
+        android:id="@+id/time2pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/time1pm" />
+
+    <Button
+        android:id="@+id/update2pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time2pm"
+        app:layout_constraintTop_toBottomOf="@+id/update1pm" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="22dp"
+        android:text="1pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="15dp"
+        android:text="7pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="17dp"
+        android:text="6pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="19dp"
+        android:text="3pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="20dp"
+        android:text="2pm:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="29dp"
+        android:text="12pm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <EditText
+        android:id="@+id/time1pm"
+        android:layout_width="59dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/update1pm"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/time12pm" />
+
+    <Button
+        android:id="@+id/update1pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="7dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/update2pm"
+        app:layout_constraintStart_toEndOf="@+id/time1pm"
+        app:layout_constraintTop_toBottomOf="@+id/update12pm" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="303dp"
+        android:layout_marginRight="303dp"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="88dp"
+        android:text="Session Time:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="88dp"
+        android:text="New limit"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/time12pm"
+        android:layout_width="59dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/time1pm"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <Button
+        android:id="@+id/update12pm"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="13dp"
+        android:text="Update"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/time12pm"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+</androidx.constraintlayout.widget.ConstraintLayout>

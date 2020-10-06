@@ -1,5 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.erestaurantapplication">
+    package="com.example.erestaurant">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -7,6 +10,32 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme">
+        <activity android:name=".tableLimit"></activity>
+        <activity android:name=".keyGen" />
+        <activity android:name=".LunchMenu" />
+        <activity android:name=".DinnerMenuUpdater" />
+        <activity android:name=".LunchMenuUpdater" />
+        <activity android:name=".menuUpdateMain" />
+        <activity android:name=".staffmain" />
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".booking" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Register" />
+        <activity android:name=".profile" />
+        <activity android:name=".History" />
+        <activity android:name=".NeedFood" />
+        <activity android:name=".DinnerMenu" />
+        <activity android:name=".WhatMenu" />
+        <activity android:name=".LunchMenuMAIN" />
+        <activity android:name=".DinnerMenuMAIN" />
+        <activity android:name=".Checkout" />
+    </application>
 
 </manifest>
