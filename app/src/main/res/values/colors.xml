@@ -6,8 +6,8 @@
     <color name="dark_blue">#FF3023FF</color>
     <color name="purple">#FFB755FF</color>
 
-    <color name="titleColour">#D2FFFFFF</color>
-    <color name="btnColour">#1affffff</color>
-    <color name="textColour">#60FFFFFF</color>
-    <color name="HeadingColour">#66ffffff</color>
+    <color name="titleColour">#E9FFFFFF</color>
+    <color name="btnColour">#17FFFFFF</color>
+    <color name="textColour">#99FFFFFF</color>
+    <color name="HeadingColour">#ABFFFFFF</color>
 </resources>

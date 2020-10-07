@@ -54,18 +54,28 @@
 
     <Button
         android:id="@+id/update9pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time9pm"
         app:layout_constraintTop_toBottomOf="@+id/update8pm" />
 
     <Button
         android:id="@+id/update8pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time8pm"
         app:layout_constraintTop_toBottomOf="@+id/update7pm" />
@@ -84,9 +94,14 @@
 
     <Button
         android:id="@+id/update7pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time7pm"
         app:layout_constraintTop_toBottomOf="@+id/update6pm" />
@@ -105,9 +120,14 @@
 
     <Button
         android:id="@+id/update6pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time6pm"
         app:layout_constraintTop_toBottomOf="@+id/update3pm" />
@@ -126,9 +146,14 @@
 
     <Button
         android:id="@+id/update3pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time3pm"
         app:layout_constraintTop_toBottomOf="@+id/update2pm" />
@@ -147,9 +172,14 @@
 
     <Button
         android:id="@+id/update2pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time2pm"
         app:layout_constraintTop_toBottomOf="@+id/update1pm" />
@@ -213,10 +243,10 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
-        android:layout_marginTop="29dp"
-        android:text="12pm"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="32dp"
+        android:text="12pm:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -229,18 +259,20 @@
         android:ems="10"
         android:inputType="number"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/update1pm"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/time12pm" />
 
     <Button
         android:id="@+id/update1pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="7dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/update2pm"
         app:layout_constraintStart_toEndOf="@+id/time1pm"
         app:layout_constraintTop_toBottomOf="@+id/update12pm" />
 
@@ -254,6 +286,8 @@
         android:layout_marginEnd="303dp"
         android:layout_marginRight="303dp"
         android:text="Back"
+        android:background="@drawable/btn_bg"
+        android:textColor="@color/HeadingColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -285,8 +319,8 @@
         android:id="@+id/time12pm"
         android:layout_width="59dp"
         android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -298,10 +332,14 @@
 
     <Button
         android:id="@+id/update12pm"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="13dp"
+        android:layout_width="46dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bg"
         android:text="Update"
+        android:textColor="@color/HeadingColour"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/time12pm"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
