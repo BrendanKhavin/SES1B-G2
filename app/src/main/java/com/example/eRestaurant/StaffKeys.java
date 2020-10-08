@@ -1,4 +1,4 @@
-package com.example.erestaurant;
+package com.example.eRestaurant;
 
 public class StaffKeys {
 

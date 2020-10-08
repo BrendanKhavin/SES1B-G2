@@ -1,4 +1,4 @@
-package com.example.erestaurant;
+package com.example.eRestaurant;
 
 
 import android.app.DatePickerDialog;
@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
 
-import static com.example.erestaurant.booking.SetDateText;
+import static com.example.eRestaurant.booking.SetDateText;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 

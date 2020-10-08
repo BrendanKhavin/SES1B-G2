@@ -1,4 +1,4 @@
-package com.example.erestaurant;
+package com.example.eRestaurant;
 
 
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,12 +56,8 @@ public class NeedFood extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if(dataSnapshot.exists()) {
-                    status = dataSnapshot.child("status").getValue().toString();
-                } else {
+                status = dataSnapshot.child("status").getValue().toString();
 
-                    // Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
-                }
             }
 
             @Override

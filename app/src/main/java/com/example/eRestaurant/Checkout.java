@@ -1,4 +1,4 @@
-package com.example.erestaurant;
+package com.example.eRestaurant;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,7 +54,7 @@ public class Checkout extends AppCompatActivity {
 
        if(bAuth.getCurrentUser() == null) {
           startActivity(new Intent(getApplicationContext(), Login.class));
-             finish();
+             //finish();
         }
         mContinueBtn = findViewById(R.id.goBackBtn);
 
