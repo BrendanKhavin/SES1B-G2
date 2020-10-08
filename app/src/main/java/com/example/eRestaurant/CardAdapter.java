@@ -20,7 +20,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     DatabaseReference reff4, reff5;
     String currentUserId;
 
-    private ArrayList<meals> meallist;
+    private ArrayList<com.example.eRestaurant.meals> meallist;
 
     private OnItemClickListener mListener;
 
@@ -59,7 +59,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     }
 
 
-    public CardAdapter(ArrayList<meals> mealList) {
+    public CardAdapter(ArrayList<com.example.eRestaurant.meals> mealList) {
         this.meallist = mealList;
     }
 
@@ -74,7 +74,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     }
     @Override
     public void onBindViewHolder(CardViewHolder holder, int position) {
-        meals currentItem = meallist.get(position);
+        com.example.eRestaurant.meals currentItem = meallist.get(position);
         int temp = position;
         holder.mTextView1.setText(currentItem.getFoodName());
         holder.mTextView2.setText(currentItem.getFoodPrice());
@@ -92,6 +92,38 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     @Override
     public int getItemCount() {
         return meallist.size();
+    }
+
+    public static class CardAdapterMAIN extends RecyclerView.Adapter<CardAdapterMAIN.CardViewHolder> {
+        private ArrayList<com.example.eRestaurant.meals> meallist;
+        public static class CardViewHolder extends RecyclerView.ViewHolder {
+            public TextView mTextView1;
+            public TextView mTextView2;
+            public CardViewHolder(View itemView) {
+                super(itemView);
+                mTextView1 = itemView.findViewById(R.id.textView);
+                mTextView2 = itemView.findViewById(R.id.textView2);
+            }
+        }
+        public CardAdapterMAIN(ArrayList<com.example.eRestaurant.meals> mealList) {
+            this.meallist = mealList;
+        }
+        @Override
+        public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.mealcard_formainscreen, parent, false);
+            CardViewHolder CVH = new CardViewHolder(v);
+            return CVH;
+        }
+        @Override
+        public void onBindViewHolder(CardViewHolder holder, int position) {
+            com.example.eRestaurant.meals currentItem = meallist.get(position);
+            holder.mTextView1.setText(currentItem.getFoodName());
+            holder.mTextView2.setText(currentItem.getFoodPrice());
+        }
+        @Override
+        public int getItemCount() {
+            return meallist.size();
+        }
     }
 }
 

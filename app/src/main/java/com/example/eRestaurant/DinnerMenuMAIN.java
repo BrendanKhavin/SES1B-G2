@@ -50,47 +50,8 @@ public class DinnerMenuMAIN extends AppCompatActivity {
         }
 
 
-        /*
-        ArrayList<meals> meallist = new ArrayList<>();
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
-        meallist.add(new meals("curry","23"));
-        meallist.add(new meals("soda","11"));
-        meallist.add(new meals("salad","12"));
 
-        mRecyclerView = findViewById(R.id.recyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new CardAdapter(meallist);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-                        //get the count value for the lunch meals data
-                     count = dataSnapshot.getChildrenCount();
-                        //set lunch meal list
-                        ArrayList<meals> meallist = new ArrayList<>();
-                            for (long i = 1; i <= count; i++) {
-                                String foodname = dataSnapshot.child("foodName").getValue().toString();
-                                String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
-                                meallist.add(new meals(foodname, foodprice));
-
-                                mRecyclerView = findViewById(R.id.recyclerView);
-                                mRecyclerView.setHasFixedSize(true);
-                                mLayoutManager = new LinearLayoutManager(LunchMenu.this);
-                                mAdapter = new CardAdapter(meallist);
-                                mRecyclerView.setLayoutManager(mLayoutManager);
-                                mRecyclerView.setAdapter(mAdapter);
-         */
-        final ArrayList<meals> meallist = new ArrayList<>();
+        final ArrayList<com.example.eRestaurant.meals> meallist = new ArrayList<>();
         reffy = FirebaseDatabase.getInstance().getReference().child("meals").child("Dinner");
         reffy.addValueEventListener(new ValueEventListener() {
             @Override
@@ -110,12 +71,12 @@ public class DinnerMenuMAIN extends AppCompatActivity {
 
                                     String foodname = dataSnapshot.child("foodName").getValue().toString();
                                     String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
-                                    meallist.add(new meals(foodname,"Price: $" + foodprice));
+                                    meallist.add(new com.example.eRestaurant.meals(foodname,"Price: $" + foodprice));
 
                                     mRecyclerView = findViewById(R.id.recyclerView);
                                     mRecyclerView.setHasFixedSize(true);
                                     mLayoutManager = new LinearLayoutManager(DinnerMenuMAIN.this);
-                                    mAdapter = new CardAdapterMAIN(meallist);
+                                    mAdapter = new CardAdapter.CardAdapterMAIN(meallist);
                                     mRecyclerView.setLayoutManager(mLayoutManager);
                                     mRecyclerView.setAdapter(mAdapter);
                                 } else {

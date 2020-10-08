@@ -49,7 +49,7 @@ public class LunchMenuMAIN extends AppCompatActivity {
             finish();
         }
 
-        final ArrayList<meals> meallist = new ArrayList<>();
+        final ArrayList<com.example.eRestaurant.meals> meallist = new ArrayList<>();
         reffy = FirebaseDatabase.getInstance().getReference().child("meals").child("Lunch");
         reffy.addValueEventListener(new ValueEventListener() {
             @Override
@@ -69,12 +69,12 @@ public class LunchMenuMAIN extends AppCompatActivity {
 
                                     String foodname = dataSnapshot.child("foodName").getValue().toString();
                                     String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
-                                    meallist.add(new meals(foodname,"Price: $" + foodprice));
+                                    meallist.add(new com.example.eRestaurant.meals(foodname,"Price: $" + foodprice));
 
                                     mRecyclerView = findViewById(R.id.recyclerView);
                                     mRecyclerView.setHasFixedSize(true);
                                     mLayoutManager = new LinearLayoutManager(LunchMenuMAIN.this);
-                                    mAdapter = new CardAdapterMAIN(meallist);
+                                    mAdapter = new CardAdapter.CardAdapterMAIN(meallist);
                                     mRecyclerView.setLayoutManager(mLayoutManager);
                                     mRecyclerView.setAdapter(mAdapter);
                                 } else {

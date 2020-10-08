@@ -1,4 +1,4 @@
-package com.example.erestaurant;
+package com.example.eRestaurant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -82,7 +82,7 @@ public class tableLimit extends AppCompatActivity {
         mbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), staffmain.class));
+                startActivity(new Intent(getApplicationContext(), com.example.eRestaurant.staffmain.class));
             }
         });
 

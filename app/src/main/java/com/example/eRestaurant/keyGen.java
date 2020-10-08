@@ -1,4 +1,4 @@
-package com.example.erestaurant;
+package com.example.eRestaurant;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,7 +55,7 @@ public class keyGen extends AppCompatActivity {
                     reff.setValue(staffKeys);
                     Toast.makeText(keyGen.this, "Key Created", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(getApplicationContext(), staffmain.class));
+                    startActivity(new Intent(getApplicationContext(), com.example.eRestaurant.staffmain.class));
                 }
             }
         });
@@ -64,7 +64,7 @@ public class keyGen extends AppCompatActivity {
         mbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), staffmain.class));
+                startActivity(new Intent(getApplicationContext(), com.example.eRestaurant.staffmain.class));
             }
         });
 
