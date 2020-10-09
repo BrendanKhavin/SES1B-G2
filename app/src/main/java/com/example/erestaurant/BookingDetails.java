@@ -7,6 +7,16 @@ public class BookingDetails {
     private String Session;
     private String Status;
     private String FoodSTat;
+    private String FoodCount;
+
+
+    public String getFoodCount() {
+        return FoodCount;
+    }
+
+    public void setFoodCount(String FoodCount) {
+        this.FoodCount = FoodCount;
+    }
 
     public String getFood() {
         return Food;

@@ -32,7 +32,7 @@ public class booking extends AppCompatActivity {
     //FirebaseAuth fAuth;
     FirebaseAuth fAuth1;
     //collecting data
-    DatabaseReference reff4, reff5;
+    DatabaseReference reff4, reff5, reff6;
 
 
     @Override
@@ -77,8 +77,8 @@ public class booking extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
-
-
+        currentUserId= fAuth1.getCurrentUser().getUid();
+        reff6 = reff4.child(currentUserId);
         mconfirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,9 +100,12 @@ public class booking extends AppCompatActivity {
                 booking.setNumPeople(numPpl);
                 booking.setFoodSTat("Deciding");
                 booking.setFood("Deciding");
+                booking.setFoodCount("0");
                 currentUserId= fAuth1.getCurrentUser().getUid();
                 reff5 = FirebaseDatabase.getInstance().getReference().child(currentUserId);
-
+                //reff6.child("FoodCount").setValue("0");
+                //reff6.child("FoodItem").child("Item0").child("foodName").setValue("0");
+                //reff6.child("FoodItem").child("Item0").child("foodPrice").setValue("0");
 
 
 

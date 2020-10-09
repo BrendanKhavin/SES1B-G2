@@ -24,7 +24,7 @@
         class="androidx.appcompat.app.AlertController$RecycleListView"
         android:layout_width="match_parent"
 
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:layout_below="@+id/TextView"
         android:background="@drawable/et_bg"
         android:padding="8dp"

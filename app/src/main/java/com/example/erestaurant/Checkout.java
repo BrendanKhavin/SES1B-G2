@@ -36,6 +36,8 @@ public class Checkout extends AppCompatActivity {
      int x = 0;
      int i = 0;
      int z = 0;
+     int s9000 = 0;
+     int listnum = 0;
      int mycheck = 0;
      int mycheck2 = 0;
      ArrayList<meals> mealList = new ArrayList<>();
@@ -74,7 +76,9 @@ public class Checkout extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if(dataSnapshot.exists()) {
+                if(dataSnapshot.exists() && dataSnapshot.child("date").getValue() != null && dataSnapshot.child("session").getValue() != null && dataSnapshot.child("numPeople").getValue() != null && dataSnapshot.child("food").getValue() != null) {
+
+
                     String s1 = "Date : " + dataSnapshot.child("date").getValue().toString();
                     String s2 = "Time : " + dataSnapshot.child("session").getValue().toString();
                     String s3 = "Table For : " + dataSnapshot.child("numPeople").getValue().toString();
@@ -150,7 +154,8 @@ public class Checkout extends AppCompatActivity {
                         reff69.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.exists()){
+                                if(dataSnapshot.exists() && s9000!= 1){
+                                    s9000 = 1;
                                     count = dataSnapshot.getChildrenCount();
                                     double totalList = 0.0;
 
@@ -160,9 +165,19 @@ public class Checkout extends AppCompatActivity {
                                         reffy1.addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                String foodname = dataSnapshot.child("foodName").getValue().toString();
-                                                String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
-                                                mealList.add(new meals(foodname,foodprice));
+                                                if(dataSnapshot.exists()) {
+                                                    if(dataSnapshot.child("foodName").getValue() != null) {
+                                                        if(dataSnapshot.child("foodPrice").getValue() != null) {
+                                                            String foodname = dataSnapshot.child("foodName").getValue().toString();
+                                                            String foodprice = dataSnapshot.child("foodPrice").getValue().toString();
+                                                            mealList.add(new meals(foodname,foodprice));
+                                                        }
+
+
+                                                    }
+
+                                                }
+
 
 
                                                 mRecyclerView = findViewById(R.id.recyclerView);
@@ -172,6 +187,7 @@ public class Checkout extends AppCompatActivity {
                                                 mAdapter = new CheckoutAdapter(mealList);
                                                 mRecyclerView.setLayoutManager(mLayoutManager);
                                                 mRecyclerView.setAdapter(mAdapter);
+
                                             }
 
                                             @Override
@@ -191,8 +207,13 @@ public class Checkout extends AppCompatActivity {
 
                             }
                         });
+                        if(dataSnapshot.child("FoodCount").getValue() != null) {
+                            listnum =Integer.parseInt(dataSnapshot.child("FoodCount").getValue().toString());
+                        } else {
+                            listnum = 0;
+                        }
 
-                        for(int j = 0; j < Integer.parseInt(dataSnapshot.child("FoodCount").getValue().toString()); j++){
+                        for(int j = 0; j < listnum; j++){
                             String jeff = "Item" + String.valueOf(j);
                             String s5 = dataSnapshot.child("FoodItem").child(jeff).child("foodPrice").getValue().toString();
                             int index = s5.indexOf("$");

@@ -58,7 +58,10 @@ public class NeedFood extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if(dataSnapshot.exists()) {
-                    status = dataSnapshot.child("status").getValue().toString();
+                    if(dataSnapshot.child("status").getValue() != null) {
+                        status = dataSnapshot.child("status").getValue().toString();
+                    }
+
                 } else {
 
                   //  Toast.makeText(getApplicationContext(), "****NOT FOUND****", Toast.LENGTH_LONG).show();
