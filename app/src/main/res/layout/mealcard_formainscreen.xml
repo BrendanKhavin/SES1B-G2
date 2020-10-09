@@ -25,16 +25,20 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/textView"
             android:text="Line 2"
-            android:textColor="@color/HeadingColour"
-            android:textSize="15sp" />
+            android:textColor="@color/titleColour"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

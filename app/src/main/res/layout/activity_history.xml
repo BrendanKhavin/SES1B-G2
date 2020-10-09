@@ -11,39 +11,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Recent Bookings"
-        android:textSize="24sp"
         android:textColor="@color/titleColour"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/modifyBtn"
-        android:layout_width="168dp"
-        android:layout_height="132dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="324dp"
-        android:background="@drawable/btn_bg"
-        android:gravity="center|bottom"
+        android:layout_width="110dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="360dp"
+        android:gravity="center"
         android:padding="2dp"
         android:text="Modify"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/historyTV" />
 
     <Button
         android:id="@+id/deleteBtn"
-        android:layout_width="168dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="324dp"
-        android:background="@drawable/btn_bg"
-        android:gravity="center|bottom"
+        android:layout_width="132dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="360dp"
+        android:gravity="center"
         android:padding="2dp"
         android:text="Delete"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toEndOf="@+id/modifyBtn"
         app:layout_constraintTop_toBottomOf="@+id/historyTV" />
 
@@ -52,9 +51,8 @@
         android:layout_width="74dp"
         android:layout_height="37dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btn_bg"
         android:text="Back"
-        android:textColor="@color/titleColour"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toStartOf="@+id/historyTV"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +64,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text=""
-        android:textColor="@color/textColour"
+        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,11 +76,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text=""
-        android:textColor="@color/textColour"
+        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sessionTxt" />
+
+    <TextView
+        android:id="@+id/foodReqTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text=""
+        android:textColor="@color/titleColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodReqTxt2" />
 
     <TextView
         android:id="@+id/sessionTxt"
@@ -90,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text=""
-        android:textColor="@color/textColour"
+        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text=""
-        android:textColor="@color/textColour"
+        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text=""
-        android:textColor="@color/textColour"
+        android:textColor="@color/titleColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,15 +179,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
-        android:id="@+id/textView12"
+    android:id="@+id/textView12"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginLeft="24dp"
+    android:layout_marginTop="24dp"
+    android:text="Food required?"
+    android:textColor="@color/titleColour"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Food required?"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="28dp"
+        android:text="Total amount:"
         android:textColor="@color/titleColour"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

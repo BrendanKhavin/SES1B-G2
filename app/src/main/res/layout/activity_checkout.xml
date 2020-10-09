@@ -26,7 +26,7 @@
         android:gravity="center_horizontal"
         android:text="Date:"
         android:textAlignment="center"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@color/titleColour"
         android:textSize="14sp"
         android:textStyle="bold" />
     <TextView
@@ -37,7 +37,7 @@
         android:gravity="center_horizontal"
         android:text="Time:"
         android:textAlignment="center"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@color/titleColour"
         android:textSize="14sp"
         android:textStyle="bold" />
     <TextView
@@ -48,7 +48,7 @@
         android:gravity="center_horizontal"
         android:text="Table for:"
         android:textAlignment="center"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@color/titleColour"
         android:textSize="14sp"
         android:textStyle="bold" />
     <TextView
@@ -59,7 +59,7 @@
         android:gravity="center_horizontal"
         android:text="Need Food?:"
         android:textAlignment="center"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@color/titleColour"
         android:textSize="14sp"
         android:textStyle="bold" />
 
@@ -67,10 +67,10 @@
         android:id="@+id/recyclerView"
         class="androidx.appcompat.app.AlertController$RecycleListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_below="@+id/TextView4"
         android:layout_marginTop="4dp"
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/et_bg"
         android:padding="4dp"
         android:scrollbars="vertical"
         android:visibility="gone" />
@@ -84,8 +84,8 @@
         android:gravity="center_horizontal"
         android:text="Total amount:"
         android:textAlignment="center"
-        android:textColor="@color/HeadingColour"
-        android:textSize="14sp"
+        android:textColor="@color/titleColour"
+        android:textSize="18sp"
         android:textStyle="bold|italic" />
 
     <Button
@@ -94,9 +94,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/PriceView"
         android:layout_marginTop="20dp"
-        android:background="@drawable/btn_bg"
-        android:textColor="@color/HeadingColour"
         android:text="Confirm Booking"
+        android:textColor="@android:color/black"
         android:textSize="14sp" />
 
 </RelativeLayout>

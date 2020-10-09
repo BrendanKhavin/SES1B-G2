@@ -27,13 +27,13 @@
         android:background="@drawable/et_bg"
         android:padding="8dp"
         android:scrollbars="vertical" />
+
     <Button
         android:id="@+id/goBackBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recyclerView"
         android:text="Continue"
-        android:background="@drawable/btn_bg"
-        android:textColor="@color/HeadingColour"
+        android:textColor="@android:color/black"
         android:textSize="14sp" />
 </RelativeLayout>

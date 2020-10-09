@@ -34,12 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //new
-        //mFullName = findViewById(R.id.zfullname);
-        //mAge = findViewById(R.id.zAge);
-        //mEmail = findViewById(R.id.zEmail);
-        //mFavFood = findViewById(R.id.zFaveFood);
-        //end
 
         mProfile = findViewById(R.id.profileBtn);
         mOrder = findViewById(R.id.orderBtn);

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class History extends AppCompatActivity {
     Button modifyBtn, deleteBtn, backBtn;
-    TextView bookingDate, bookingTime, bookingSeating, bookingSession,bookingFoodSituation;
+    TextView bookingDate, bookingTime, bookingSeating, bookingSession,bookingFoodSituation,bTotalAmount;
     String currentUserID;
     private DatabaseReference reff, reff2, reff3;
     private FirebaseAuth bAuth;
@@ -41,6 +41,7 @@ public class History extends AppCompatActivity {
         bookingSeating = (TextView) findViewById(R.id.seatingTxt);
         bookingSession = (TextView) findViewById(R.id.sessionTxt);
         bookingFoodSituation = (TextView) findViewById(R.id.foodReqTxt2);
+        bTotalAmount = (TextView) findViewById(R.id.foodReqTxt);
 
         bAuth = FirebaseAuth.getInstance();
 
@@ -62,11 +63,13 @@ public class History extends AppCompatActivity {
                     String bNumPeople = dataSnapshot.child("numPeople").getValue().toString();
                     String bStatus = dataSnapshot.child("status").getValue().toString();
                     String bFoodStat = dataSnapshot.child("foodSTat").getValue().toString();
+                    String bTotalAm = dataSnapshot.child("TotalPrice").getValue().toString();
                     bookingFoodSituation.setText(bFoodStat);
                     bookingDate.setText(bDate);
                     bookingTime.setText(bTime);
                     bookingSeating.setText(bNumPeople);
                     bookingSession.setText(bStatus);
+                    bTotalAmount.setText(bTotalAm);
                     mydate = dataSnapshot.child("date").getValue().toString();
                     mytime =dataSnapshot.child("session").getValue().toString();
                     reff2 = FirebaseDatabase.getInstance().getReference().child("Seatings").child(mydate).child(mytime).child("Limit");
@@ -77,7 +80,7 @@ public class History extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists())  {
                                 myLimit = dataSnapshot.getValue().toString();
-                                Toast.makeText(History.this, "my value is " +myLimit, Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(History.this, "my value is " +myLimit, Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -119,6 +122,7 @@ public class History extends AppCompatActivity {
                 bookingSeating.setText("");
                 bookingSession.setText("");
                 bookingFoodSituation.setText("");
+                bTotalAmount.setText("");
 
                 int myGL = Integer.parseInt(myLimit);
                 for (i = 0; i <= 1; i++) {
