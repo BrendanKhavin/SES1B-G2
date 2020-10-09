@@ -8,6 +8,16 @@ public class BookingDetails {
     private String Status;
     private String FoodSTat;
 
+    public String getFood() {
+        return Food;
+    }
+
+    public void setFood(String food) {
+        Food = food;
+    }
+
+    private String Food;
+
 
     public String getBookingID() {
         return bookingID;

@@ -98,8 +98,11 @@ public class booking extends AppCompatActivity {
                 booking.setStatus(status);
                 booking.setDate(date);
                 booking.setNumPeople(numPpl);
+                booking.setFoodSTat("Deciding");
+                booking.setFood("Deciding");
                 currentUserId= fAuth1.getCurrentUser().getUid();
                 reff5 = FirebaseDatabase.getInstance().getReference().child(currentUserId);
+
 
 
 

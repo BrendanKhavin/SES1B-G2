@@ -79,12 +79,12 @@ public class NeedFood extends AppCompatActivity {
             public void onClick(View view) {
                 if(status.equals("Lunch")) {
                     String AddFood = "Yes";
-                    reff4.child("Food").setValue(AddFood);
+                    reff4.child("food").setValue(AddFood);
                     startActivity(new Intent(getApplicationContext(), LunchMenu.class));
 
                 } else {
                     String AddFood = "Yes";
-                    reff4.child("Food").setValue(AddFood);
+                    reff4.child("food").setValue(AddFood);
                     startActivity(new Intent(getApplicationContext(), DinnerMenu.class));
 
                 }
@@ -97,7 +97,7 @@ public class NeedFood extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String AddFood = "No";
-                reff4.child("Food").setValue(AddFood);
+                reff4.child("food").setValue(AddFood);
                 startActivity(new Intent(getApplicationContext(), Checkout.class));
             }
         });

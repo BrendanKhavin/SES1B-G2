@@ -78,7 +78,8 @@ public class Checkout extends AppCompatActivity {
                     String s1 = "Date : " + dataSnapshot.child("date").getValue().toString();
                     String s2 = "Time : " + dataSnapshot.child("session").getValue().toString();
                     String s3 = "Table For : " + dataSnapshot.child("numPeople").getValue().toString();
-               //     String s4 = "Food required? " + dataSnapshot.child("Food").getValue().toString();
+                    String s4 = "Food required? " + dataSnapshot.child("food").getValue().toString();
+                    Toast.makeText(Checkout.this, "you made it!", Toast.LENGTH_SHORT).show();
 
                     //my changes part 1
                     String mytime = dataSnapshot.child("session").getValue().toString();
@@ -100,7 +101,7 @@ public class Checkout extends AppCompatActivity {
                                 int mycurrL = Integer.parseInt(mycurrLim);
                                 if(mycurrL == 0) {
                                     mContinueBtn.setClickable(false);
-                                //    Toast.makeText(Checkout.this, "This day is bookout!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Checkout.this, "This day is booked out!", Toast.LENGTH_SHORT).show();
                                 } else {
                                     mContinueBtn.setClickable(true);
                                 }
@@ -121,7 +122,7 @@ public class Checkout extends AppCompatActivity {
 
                     bTime.setText(s2);
                     bSeating.setText(s3);
-                    bFoodStat.setText("NO");
+                    bFoodStat.setText(s4);
 
 
 
@@ -136,7 +137,7 @@ public class Checkout extends AppCompatActivity {
                     String time = dataSnapshot.child("session").getValue().toString();
                     String date = dataSnapshot.child("date").getValue().toString();
                     String status = dataSnapshot.child("status").getValue().toString();
-                    String food = "hey";//dataSnapshot.child("Food").getValue().toString();
+                    String food = dataSnapshot.child("food").getValue().toString();
                     booking.setSession(time);
                     booking.setBookingID(bookingID);
                     booking.setStatus(status);
