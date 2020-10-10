@@ -99,7 +99,7 @@ public class LunchMenuMAIN extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 //Toast.makeText(this, databaseError.getCode(), Toast.LENGTH_SHORT.show();
-                Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LunchMenuMAIN.this, "unable", Toast.LENGTH_SHORT).show();
             }
         });
 

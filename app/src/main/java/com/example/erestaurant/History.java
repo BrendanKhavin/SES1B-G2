@@ -63,7 +63,7 @@ public class History extends AppCompatActivity {
                     String bNumPeople = dataSnapshot.child("numPeople").getValue().toString();
                     String bStatus = dataSnapshot.child("status").getValue().toString();
                     String bFoodStat = dataSnapshot.child("foodSTat").getValue().toString();
-                    String bTotalAm = dataSnapshot.child("TotalPrice").getValue().toString();
+                    String bTotalAm = "$ " + dataSnapshot.child("TotalPrice").getValue().toString();
                     bookingFoodSituation.setText(bFoodStat);
                     bookingDate.setText(bDate);
                     bookingTime.setText(bTime);

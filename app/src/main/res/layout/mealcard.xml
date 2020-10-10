@@ -46,7 +46,6 @@
             android:layout_marginLeft="270dp"
             android:layout_marginTop="2dp"
             android:padding="2dp"
-            android:src="@android:drawable/ic_input_add"
-            tools:srcCompat="@android:drawable/ic_menu_add" />
+            android:src="@drawable/ic_baseline_add_circle" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
