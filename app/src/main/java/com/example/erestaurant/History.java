@@ -63,7 +63,7 @@ public class History extends AppCompatActivity {
                     String bNumPeople = dataSnapshot.child("numPeople").getValue().toString();
                     String bStatus = dataSnapshot.child("status").getValue().toString();
                     String bFoodStat = dataSnapshot.child("foodSTat").getValue().toString();
-                    String bTotalAm = "$ " + dataSnapshot.child("TotalPrice").getValue().toString();
+                    String bTotalAm = dataSnapshot.child("totalAmount").getValue().toString();
                     bookingFoodSituation.setText(bFoodStat);
                     bookingDate.setText(bDate);
                     bookingTime.setText(bTime);
@@ -73,7 +73,7 @@ public class History extends AppCompatActivity {
                     mydate = dataSnapshot.child("date").getValue().toString();
                     mytime =dataSnapshot.child("session").getValue().toString();
                     reff2 = FirebaseDatabase.getInstance().getReference().child("Seatings").child(mydate).child(mytime).child("Limit");
-                    Toast.makeText(History.this, "my date is " +mydate+ "---mytime is "+mytime, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(History.this, "my date is " +mydate+ "///mytime is "+mytime, Toast.LENGTH_SHORT).show();
                     deleteBtn.setClickable(true);
                     reff2.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -124,6 +124,7 @@ public class History extends AppCompatActivity {
                 bookingFoodSituation.setText("");
                 bTotalAmount.setText("");
 
+
                 int myGL = Integer.parseInt(myLimit);
                 for (i = 0; i <= 1; i++) {
                     if(mycheck != 1) {
@@ -134,6 +135,7 @@ public class History extends AppCompatActivity {
                     }
 
                 }
+
 
                 deleteBtn.setClickable(false);
 

@@ -23,7 +23,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
         //setting 7days date picker range for the booking
-        DatePickerDialog dpd = new DatePickerDialog(getActivity(),this,year,month,day);
+        DatePickerDialog dpd = new DatePickerDialog(getActivity(),this,year,month,day+1);
                 //add(int field, int value)
                 //Adds the given amount to a Calendar field.
             /*
@@ -44,6 +44,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
              */
 
         // Set the Calendar new date as minimum date of date picker
+        calendar.add(Calendar.DATE, 1);
         dpd.getDatePicker().setMinDate(calendar.getTimeInMillis());
 
         // add 6 days from Calendar updated date

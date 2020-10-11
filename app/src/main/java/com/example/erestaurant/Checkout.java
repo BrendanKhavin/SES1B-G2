@@ -65,7 +65,7 @@ public class Checkout extends AppCompatActivity {
        bTotalAmount = (TextView) findViewById(R.id.PriceView);
 
         reff2 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
-        reff69 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem");
+        reff69 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("foodItem");
         booking = new BookingDetails();
 
         reff4 = FirebaseDatabase.getInstance().getReference().child("BookingDetails");
@@ -83,7 +83,7 @@ public class Checkout extends AppCompatActivity {
                     String s2 = "Time : " + dataSnapshot.child("session").getValue().toString();
                     String s3 = "Table For : " + dataSnapshot.child("numPeople").getValue().toString();
                     String s4 = "Food required? " + dataSnapshot.child("food").getValue().toString();
-                    Toast.makeText(Checkout.this, "you made it!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Checkout.this, "you made it!", Toast.LENGTH_SHORT).show();
 
                     //my changes part 1
                     String mytime = dataSnapshot.child("session").getValue().toString();
@@ -161,7 +161,7 @@ public class Checkout extends AppCompatActivity {
 
                                     for(int i = 0; i < count ; i++){
                                         final String item = "Item" + i;
-                                        reffy1 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("FoodItem").child(item);
+                                        reffy1 = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId).child("foodItem").child(item);
                                         reffy1.addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -207,26 +207,29 @@ public class Checkout extends AppCompatActivity {
 
                             }
                         });
-                        if(dataSnapshot.child("FoodCount").getValue() != null) {
-                            listnum =Integer.parseInt(dataSnapshot.child("FoodCount").getValue().toString());
+                        if(dataSnapshot.child("foodCount").getValue() != null) {
+                            listnum =Integer.parseInt(dataSnapshot.child("foodCount").getValue().toString());
                         } else {
                             listnum = 0;
                         }
 
                         for(int j = 0; j < listnum; j++){
                             String jeff = "Item" + String.valueOf(j);
-                            String s5 = dataSnapshot.child("FoodItem").child(jeff).child("foodPrice").getValue().toString();
+                            String s5 = dataSnapshot.child("foodItem").child(jeff).child("foodPrice").getValue().toString();
                             int index = s5.indexOf("$");
                             String s51 = s5.substring(index+1);
                             totalamt = totalamt + Double.parseDouble(s51);
                         }
                         String s6 = "Total amount: $" + String.valueOf(totalamt);
                         bTotalAmount.setText(s6);
+                        booking.setTotalAmount(String.valueOf(totalamt));
 
 
                     } else {
-                        String s5 = " Total amount: No charge " ;
+                        String s89 = "No charge";
+                        String s5 = " Total amount: " + s89 ;
                         bTotalAmount.setText(s5);
+                        booking.setTotalAmount(s89);
                     }
                 } else {
                    // Toast.makeText(getApplicationContext(), "Not Found", Toast.LENGTH_LONG).show();
@@ -248,10 +251,10 @@ public class Checkout extends AppCompatActivity {
                     public void onClick(View view) {
                         reff4.child(currentUserId).setValue(booking);
                         reff4.child(currentUserId).child("OrderList").setValue(mealList);
-                        reff4.child(currentUserId).child("TotalPrice").setValue(String.valueOf(totalamt));
                         DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("ShopTemp").child(currentUserId);
                         deleteRef.removeValue();
                         refftest = reff3;
+                        s9000 = 0;
 
 
 

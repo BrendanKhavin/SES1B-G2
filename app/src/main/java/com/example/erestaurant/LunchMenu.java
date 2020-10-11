@@ -102,9 +102,9 @@ public class LunchMenu extends AppCompatActivity {
                                     mAdapter.setOnItemClickListener(new CardAdapter.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(int position) {
-                                            reffy2.child("FoodItem").child("Item"+String.valueOf(x)).setValue(meallist.get(position));
+                                            reffy2.child("foodItem").child("Item"+String.valueOf(x)).setValue(meallist.get(position));
                                             x++;
-                                            reffy2.child("FoodCount").setValue(x);
+                                            reffy2.child("foodCount").setValue(x);
                                         }
                                     });
 

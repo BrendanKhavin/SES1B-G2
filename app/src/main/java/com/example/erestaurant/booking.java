@@ -101,6 +101,7 @@ public class booking extends AppCompatActivity {
                 booking.setFoodSTat("Deciding");
                 booking.setFood("Deciding");
                 booking.setFoodCount("0");
+                booking.setTotalAmount("0");
                 currentUserId= fAuth1.getCurrentUser().getUid();
                 reff5 = FirebaseDatabase.getInstance().getReference().child(currentUserId);
                 //reff6.child("FoodCount").setValue("0");

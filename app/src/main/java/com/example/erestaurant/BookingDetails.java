@@ -8,6 +8,8 @@ public class BookingDetails {
     private String Status;
     private String FoodSTat;
     private String FoodCount;
+    private String TotalAmount;
+
 
 
     public String getFoodCount() {
@@ -75,6 +77,14 @@ public class BookingDetails {
 
     public void setFoodSTat(String food) {
         FoodSTat = food;
+    }
+
+    public String getTotalAmount() {
+        return TotalAmount;
+    }
+
+    public void setTotalAmount(String Amount) {
+        TotalAmount = Amount;
     }
 
 
